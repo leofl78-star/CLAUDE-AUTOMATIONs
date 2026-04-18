@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carrossel 04 — Recaída Não É Fracasso | Senta Aqui Com o Léo</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Playfair+Display:wght@700;900&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0a0a0a;
+    color: #f0ece4;
+    font-family: 'Inter', sans-serif;
+    padding: 40px 24px;
+  }
+
+  /* ===== HEADER ===== */
+  .doc-header {
+    max-width: 900px;
+    margin: 0 auto 64px auto;
+    border-bottom: 2px solid #2a2a2a;
+    padding-bottom: 40px;
+  }
+
+  .badge {
+    display: inline-block;
+    background: #c4ff3e;
+    color: #0a0a0a;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .doc-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(36px, 5vw, 56px);
+    font-weight: 900;
+    line-height: 1.05;
+    color: #f0ece4;
+    margin-bottom: 20px;
+  }
+
+  .doc-title span { color: #c4ff3e; }
+
+  .doc-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 24px;
+  }
+
+  .meta-item {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+
+  .meta-item strong { color: #f0ece4; display: block; font-size: 14px; margin-top: 4px; letter-spacing: 0; text-transform: none; }
+
+  /* ===== SECTION DIVIDER ===== */
+  .section-intro {
+    max-width: 900px;
+    margin: 0 auto 48px auto;
+    background: #131313;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 28px 32px;
+  }
+
+  .section-intro h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c4ff3e;
+    margin-bottom: 14px;
+  }
+
+  .section-intro p {
+    font-size: 15px;
+    color: #aaa;
+    line-height: 1.7;
+  }
+
+  /* ===== SLIDE CARD ===== */
+  .slide-card {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .slide-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 22px 32px;
+    border-bottom: 1px solid #1e1e1e;
+    background: #0e0e0e;
+  }
+
+  .slide-number {
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #444;
+    min-width: 72px;
+  }
+
+  .slide-role {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 100px;
+    background: #1e1e1e;
+    color: #888;
+  }
+
+  .slide-role.capa { background: #c4ff3e22; color: #c4ff3e; }
+  .slide-role.hook { background: #ff6b3d22; color: #ff6b3d; }
+  .slide-role.dado { background: #3d9dff22; color: #3d9dff; }
+  .slide-role.reframe { background: #a855f722; color: #c084fc; }
+  .slide-role.protocolo { background: #22c55e22; color: #4ade80; }
+  .slide-role.prova { background: #f59e0b22; color: #fbbf24; }
+  .slide-role.emocao { background: #ec489922; color: #f472b6; }
+  .slide-role.cta { background: #c4ff3e22; color: #c4ff3e; }
+
+  .slide-body {
+    padding: 32px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @media (max-width: 640px) {
+    .slide-body { grid-template-columns: 1fr; }
+  }
+
+  .slide-body.full { grid-template-columns: 1fr; }
+
+  /* ===== FIELD BLOCKS ===== */
+  .field {
+    margin-bottom: 0;
+  }
+
+  .field-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .field-label::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #c4ff3e;
+  }
+
+  .field-content {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #ccc;
+  }
+
+  .headline-display {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(22px, 3vw, 30px);
+    font-weight: 900;
+    color: #f0ece4;
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .copy-block {
+    background: #0a0a0a;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.8;
+    color: #bbb;
+    font-style: italic;
+  }
+
+  .prompt-block {
+    background: #070d07;
+    border: 1px solid #1a2e1a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #6cba6c;
+    font-family: 'Courier New', monospace;
+  }
+
+  .trigger-block {
+    background: #0d0a07;
+    border: 1px solid #2e1e0a;
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: #c8a26b;
+  }
+
+  .trigger-block strong {
+    font-size: 18px;
+    display: block;
+    color: #fbbf24;
+    margin-bottom: 6px;
+  }
+
+  /* ===== HIGHLIGHT CALLOUT ===== */
+  .callout {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    background: linear-gradient(135deg, #c4ff3e14, #c4ff3e05);
+    border: 1px solid #c4ff3e30;
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+
+  .callout h4 {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #c4ff3e;
+    margin-bottom: 8px;
+  }
+
+  .callout p {
+    font-size: 14px;
+    color: #aaa;
+    line-height: 1.7;
+  }
+
+  /* ===== PHOTO SLIDE SPECIAL ===== */
+  .photo-directive {
+    background: #0e0e0e;
+    border: 1px dashed #333;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .photo-icon {
+    font-size: 28px;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .photo-directive-text {
+    font-size: 13px;
+    line-height: 1.7;
+    color: #aaa;
+  }
+
+  .photo-directive-text strong {
+    color: #f0ece4;
+    display: block;
+    margin-bottom: 6px;
+    font-size: 14px;
+  }
+
+  /* ===== TECH SPECS FOOTER ===== */
+  .tech-specs {
+    max-width: 900px;
+    margin: 64px auto 0 auto;
+    border-top: 1px solid #1e1e1e;
+    padding-top: 40px;
+  }
+
+  .tech-specs h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 24px;
+  }
+
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+  }
+
+  .spec-item {
+    background: #111;
+    border: 1px solid #1e1e1e;
+    border-radius: 8px;
+    padding: 16px 20px;
+  }
+
+  .spec-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 8px;
+  }
+
+  .spec-value {
+    font-size: 14px;
+    font-weight: 700;
+    color: #f0ece4;
+  }
+
+  .spec-sub {
+    font-size: 12px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  /* ===== NARRATIVE ARC ===== */
+  .arc-bar {
+    max-width: 900px;
+    margin: 0 auto 64px auto;
+  }
+
+  .arc-bar h3 {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  .arc-steps {
+    display: flex;
+    gap: 0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .arc-step {
+    flex: 1;
+    text-align: center;
+    padding: 14px 8px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #0a0a0a;
+    position: relative;
+  }
+
+  .arc-step.s1 { background: #ff6b3d; }
+  .arc-step.s2 { background: #ff8c5a; }
+  .arc-step.s3 { background: #3d9dff; }
+  .arc-step.s4 { background: #a855f7; }
+  .arc-step.s5 { background: #ef4444; }
+  .arc-step.s6 { background: #22c55e; }
+  .arc-step.s7 { background: #f59e0b; }
+  .arc-step.s8 { background: #ec4899; }
+  .arc-step.s9 { background: #8b5cf6; }
+  .arc-step.s10 { background: #c4ff3e; }
+
+  .arc-step span {
+    display: block;
+    font-size: 18px;
+    font-weight: 900;
+    margin-bottom: 4px;
+  }
+
+  /* ===== SEPARATOR ===== */
+  .separator {
+    max-width: 900px;
+    margin: 0 auto 40px auto;
+    border-top: 1px solid #1a1a1a;
+  }
+
+  .slide-label-banner {
+    max-width: 900px;
+    margin: 0 auto 20px auto;
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+  }
+
+  .slide-num-big {
+    font-size: clamp(60px, 10vw, 90px);
+    font-weight: 900;
+    color: #1a1a1a;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+
+  .slide-title-small {
+    font-size: 14px;
+    font-weight: 700;
+    color: #444;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== DOC HEADER ===== -->
+<div class="doc-header">
+  <div class="badge">Direção Criativa Executiva</div>
+  <h1 class="doc-title">Recaída Não É <span>Fracasso</span></h1>
+  <div class="doc-meta">
+    <div class="meta-item">Cliente <strong>Senta Aqui Com o Léo</strong></div>
+    <div class="meta-item">Formato <strong>Carrossel 10 Slides</strong></div>
+    <div class="meta-item">Proporção <strong>4:5 — 1080 × 1350px</strong></div>
+    <div class="meta-item">Objetivo <strong>Saves + Engajamento Profundo</strong></div>
+    <div class="meta-item">Série <strong>Carrossel 04</strong></div>
+  </div>
+</div>
+
+<!-- ===== CONTEXT ===== -->
+<div class="section-intro">
+  <h3>Estratégia Narrativa</h3>
+  <p>Este carrossel usa o framework <strong style="color:#f0ece4">Problema > Agitação > Dado > Reframe > Protocolo > Prova Social > CTA</strong>. O objetivo não é apenas informar. É fazer o leitor sentir que foi visto. Cada slide carrega um micro-gatilho emocional que força o próximo deslize. O slide 7 usa a foto pessoal do Léo como âncora de credibilidade e conexão humana, quebrando o padrão visual e gerando o pico de engajamento no carrossel.</p>
+</div>
+
+<!-- ===== NARRATIVE ARC BAR ===== -->
+<div class="arc-bar">
+  <h3>Arco Narrativo — Slide a Slide</h3>
+  <div class="arc-steps">
+    <div class="arc-step s1"><span>1</span>HOOK</div>
+    <div class="arc-step s2"><span>2</span>PROBLEMA</div>
+    <div class="arc-step s3"><span>3</span>DADO</div>
+    <div class="arc-step s4"><span>4</span>REFRAME</div>
+    <div class="arc-step s5"><span>5</span>PERIGO</div>
+    <div class="arc-step s6"><span>6</span>PROTOCOLO</div>
+    <div class="arc-step s7"><span>7</span>FOTO/PROVA</div>
+    <div class="arc-step s8"><span>8</span>EMOÇÃO</div>
+    <div class="arc-step s9"><span>9</span>PONTE</div>
+    <div class="arc-step s10"><span>10</span>CTA</div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 1 -->
+<!-- ===================================================== -->
+<div class="slide-label-banner">
+  <div class="slide-num-big">01</div>
+  <div class="slide-title-small">Capa / Hook — 80% do peso do post</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 01</div>
+    <div class="slide-role capa">CAPA</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline — Hook (máx. 7 palavras)</div>
+        <div class="headline-display">Eu recaí. Hoje tenho 6 anos limpo.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Subtítulo</div>
+        <div class="field-content" style="font-size:16px; color:#888; font-style:italic;">"O que ninguém te conta sobre recaída."</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Sem texto de apoio nesta slide. A headline carrega tudo. A frase pessoal do Léo é o único copy. Silêncio visual ao redor dela amplifica o impacto.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt de Geração de Imagem</div>
+        <div class="prompt-block">
+Full-bleed background: deep black with heavy grain texture and micro-scratches. Center foreground: ultra-bold black slab serif typography printed at 90% text-fill, the words "EU RECAÍ." in one line and "6 ANOS LIMPO." below. Apply Chiaroscuro lighting — single high-contrast spotlight from above-left casting deep shadows on the letterforms. Tactile paper pulp texture overlaid at 40% opacity. The word "RECAÍ" is slightly oversized at 120% scale, creating visual hierarchy tension. Palette: off-white (#f0ece4) text on near-black (#080808) background. Bottom-right: neon acid-green micro-label reading "SENTA AQUI COM O LÉO". Lens simulation: Sony 85mm f/1.4 bokeh on background grain. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>Visual: seta tipográfica no rodapé direito</strong>
+          Texto: "A história completa está aqui" + ícone de dedo apontando para direita. Fonte: condensed ultra-bold, cor acid green. Posição: bottom-right, 5% de padding.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout">
+  <h4>Nota Estratégica — Slide 1</h4>
+  <p>Este é o único slide onde você usa a confissão pessoal como headline. Isso quebra o padrão dos conteúdos de saúde mental que são impessoais. A primeira pessoa cria identificação imediata. O contraste entre "recaí" e "6 anos limpo" na mesma frase gera a lacuna de curiosidade que força o próximo deslize.</p>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 2 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">02</div>
+  <div class="slide-title-small">O Problema Real</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 02</div>
+    <div class="slide-role hook">PROBLEMA</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">A vergonha mata mais que a droga.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          O mundo da recuperação tem um problema sério.<br><br>
+          Trata recaída como fracasso.<br>
+          Como fraqueza.<br>
+          Como o fim da história.<br><br>
+          E isso mata mais gente do que a substância em si.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Split composition: left half deep shadow, right half harsh white rim light — Rembrandt lighting style. Background: crumpled raw paper texture, dark grey. Center: bold condensed type "A VERGONHA / MATA MAIS" at 80pt, brutalist layout. Below: smaller text block in regular weight. Accent element: a single bright crimson-red horizontal rule line cutting through center of composition. Vignette hard-burned edges. Tactile relief texture on lettering. Continuity note: maintain black/off-white palette, same grain overlay as Slide 1. Lens: 50mm f/2.8. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Mas os dados dizem algo diferente."</strong>
+          Texto posicionado na margem inferior, cor branca, peso light. Gera expectativa sem revelar o conteúdo do próximo slide.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 3 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">03</div>
+  <div class="slide-title-small">Dado Real — Credibilidade</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 03</div>
+    <div class="slide-role dado">DADO REAL</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">40 a 60% das pessoas em recuperação recaem.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Isso é o que o Instituto Nacional sobre Abuso de Drogas dos EUA (NIDA) comprova.<br><br>
+          Não é fraqueza. É parte do processo documentado.<br><br>
+          Se você recaiu, você está dentro da estatística normal da recuperação.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Data-viz editorial design. Background: dark charcoal with subtle grid pattern. Giant typographic number "40–60%" filling 70% of the canvas, set in ultra-black condensed sans-serif, slight compression distortion. The "%" symbol rendered in acid-green (#c4ff3e). Below: small label bar in white — "NIDA — National Institute on Drug Abuse". Bottom: standard body copy text block. Lighting: flat design with subtle emboss on the large number to create tactile effect. Texture: halftone dot pattern visible in mid-tones at 30% opacity. Lens simulation: product photography 60mm macro, razor-sharp. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Mas tem uma coisa que o dado não te conta..."</strong>
+          Linha de suspense. Fonte: italic light, cor off-white. Força o próximo deslize com promessa de informação não revelada.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 4 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">04</div>
+  <div class="slide-title-small">O Reframe</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 04</div>
+    <div class="slide-role reframe">REFRAME</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">Recaída não apaga progresso. É informação.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Toda recaída diz alguma coisa.<br><br>
+          Qual gatilho você ainda não trabalhou?<br>
+          Qual vazio você ainda não encarou?<br>
+          Qual relação ainda drena sua energia?<br><br>
+          A recaída é um dado, não uma sentença.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Two-panel composition split diagonally. Left diagonal panel: dark, rough concrete texture background, word "FRACASSO" in cracked, degraded font. Right diagonal panel: clean white with "INFORMAÇÃO" in sharp, precise sans-serif. A bright acid-green diagonal slash cuts between them as the dividing element. Chiaroscuro rim light from top-right. Typography contrast is the story — chaos vs. clarity. Maintain grain texture from previous slides for visual continuity. Bottom: clean copy text block in white, weight regular. Lens: 35mm cinematic. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Mas o perigo real não é a recaída em si."</strong>
+          Cria antecipação de risco. Fonte: bold condensed, cor branca. O leitor precisa saber qual é esse perigo real.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 5 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">05</div>
+  <div class="slide-title-small">O Perigo Real — Agitação Máxima</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 05</div>
+    <div class="slide-role hook">AGITAÇÃO</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">O perigo real é sumir de vergonha.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          O perigo real não é ter recaído.<br><br>
+          É o que acontece depois:<br><br>
+          Você sente vergonha.<br>
+          Você para de falar.<br>
+          Você desaparece.<br>
+          Você para de pedir ajuda.<br><br>
+          E aí o isolamento faz o trabalho que a substância não terminou.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Dark psychological composition. Background: almost pure black with a single harsh overhead key light — film noir style. Center: a solitary empty chair, photographically rendered or illustrated in stark chiaroscuro — deep shadow on three sides, single beam of cold white light on the seat. The chair symbolizes absence and isolation. Below the chair: bold typographic copy in tight layout. Top third: headline in oversized ultra-bold white. The chair element occupies the visual negative space between headline and copy. The composition must feel lonely and pressurized. Grain: heavy film grain overlay. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Então o que você faz logo depois de recair?"</strong>
+          Pergunta direta que posiciona o próximo slide como resposta prática. O leitor que se identificou com esse slide precisa da resposta agora.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 6 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">06</div>
+  <div class="slide-title-small">Protocolo de Ação Pós-Recaída</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 06</div>
+    <div class="slide-role protocolo">PROTOCOLO</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">3 passos para as próximas 24 horas.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Passo 01 — Conta para alguém de confiança.<br>
+          Não amanhã. Agora.<br><br>
+          Passo 02 — Vai ao seu grupo ou conselheiro.<br>
+          Não some. Apareça.<br><br>
+          Passo 03 — Não se julga pelo que aconteceu.<br>
+          Se pergunte: "o que esse episódio me ensinou?"
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Editorial instruction-card design. Background: deep forest green (#0d1f0d) with heavy linen texture overlay. Three numbered steps in tight grid layout — each step formatted as a card-within-card with a thin white border. Step numbers "01", "02", "03" in giant light grey figures (background element, 15% opacity) behind each instruction text. Headline at top in super-bold condensed white. Acid-green accent rule between headline and steps. Typography: mix of ultra-bold headline and clean regular body. Rim lighting effect on left edge of composition — creates 3D tactile feel. Lens: architectural 24mm straight perspective. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Eu sei o que estou falando. Eu passei por isso."</strong>
+          Transição para o testemunho pessoal. O leitor agora vai ver a prova viva. Fonte: italic, levemente menor, cor off-white 70%.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 7 — FOTO DO LÉO -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">07</div>
+  <div class="slide-title-small">Testemunho Pessoal — FOTO DO LÉO</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 07</div>
+    <div class="slide-role prova">PROVA SOCIAL + FOTO</div>
+  </div>
+  <div class="slide-body full">
+
+    <div class="photo-directive">
+      <div class="photo-icon">📸</div>
+      <div class="photo-directive-text">
+        <strong>USE A FOTO PESSOAL DO LÉO — arquivo: "leo foto profile.jpeg" ou foto do set "Senta Aqui Com o Léo"</strong>
+        Posicionamento: foto ocupa 60% superior do slide. Léo olha diretamente para a câmera. Sem filtro pesado — cor natural, leve correção de contraste. O fundo verde da parede de plantas (conforme a foto do set) reforça identidade visual do canal. Aplicar Rim Light sutil na borda esquerda da foto para criar separação com o fundo. Copy sobreposto na faixa inferior 40% do slide sobre gradiente preto semi-transparente (opacity 85%).
+      </div>
+    </div>
+
+    <br>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px;">
+      <div>
+        <div class="field">
+          <div class="field-label">Headline</div>
+          <div class="headline-display">Eu recaí. Voltei. 6 anos depois estou aqui.</div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="field-label">Copy Estratégico</div>
+          <div class="copy-block">
+            Não voltei porque sou forte.<br><br>
+            Voltei porque não desisti de tentar.<br><br>
+            Essa diferença mudou tudo.
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="field">
+          <div class="field-label">Direção de Arte — Edição da Foto</div>
+          <div class="prompt-block">
+Use Leo's personal photo. Color grade: desaturate 15%, boost contrast +20, shadows to deep black. Apply a subtle warm-to-cool gradient map at 10% opacity. Bottom of photo: fade to solid black via linear gradient over bottom 40% of image. Rim light enhancement on left edge: brightening via dodge tool at 20% strength. Top-left corner: channel logo "SENTA AQUI COM O LÉO" in small white condensed caps. Overlay text positioned in bottom black zone. Font: ultra-bold white headline + regular weight supporting copy. No filter presets — editorial grade only. Format: 1080x1350px 4:5.
+          </div>
+        </div>
+        <br>
+        <div class="field">
+          <div class="field-label">Trigger de Deslize</div>
+          <div class="trigger-block">
+            <strong>"Se você recaiu agora — esse slide é pra você."</strong>
+            Endereça diretamente quem está na situação hoje. Cria urgência emocional para o próximo slide. Posição: abaixo do copy, fonte condensed bold itálica, cor acid-green.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="callout">
+  <h4>Por que a foto do Léo vai aqui</h4>
+  <p>O slide 7 é o pico de engajamento em carrosséis de conteúdo emocional. Colocar a foto pessoal aqui quebra o padrão visual dos slides anteriores (que são todos tipográficos) e sinaliza ao algoritmo e ao leitor que algo diferente está acontecendo. Rosto humano = tempo de permanência aumenta. Testemunho pessoal com prova fotográfica = credibilidade máxima.</p>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 8 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">08</div>
+  <div class="slide-title-small">Conexão Emocional — O Leitor Se Vê</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 08</div>
+    <div class="slide-role emocao">EMOÇÃO</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">Esse post é pra quem recaiu e sumiu.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Pra quem parou de atender o telefone.<br>
+          Parou de ir às reuniões.<br>
+          Parou de acreditar que dá pra voltar.<br><br>
+          Você não acabou.<br>
+          Você só parou no meio do caminho.<br><br>
+          Tem diferença.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Maximalist emotional typography layout. Background: black velvet texture — dense dark fiber pattern. Central text composition: the phrase "VOCÊ NÃO ACABOU." at 120pt ultra-black condensed. Around it, in very small light grey text (30% opacity), repeating micro-text of the supporting copy phrases creating a texture pattern. Lighting: single center-top spotlight creating a halo/vignette effect — like light through a church window — purely typographic. Acid-green vertical accent bar on left edge (8px wide). Soft grain film overlay. Lens: 85mm portrait simulation, emotional depth. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Mas como você volta?"</strong>
+          Pergunta que vai direto ao ponto prático. O leitor que se identificou agora quer a resposta. Curto, direto, bold.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 9 -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">09</div>
+  <div class="slide-title-small">Ponte para a Ação — O Primeiro Passo</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 09</div>
+    <div class="slide-role protocolo">PONTE</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">Um passo. Só um. Agora.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico</div>
+        <div class="copy-block">
+          Você não precisa resolver tudo hoje.<br><br>
+          Só precisa fazer uma coisa:<br>
+          contar pra alguém que você está na luta.<br><br>
+          Uma mensagem.<br>
+          Uma ligação.<br>
+          Um comentário aqui embaixo.<br><br>
+          Isso já é o começo.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+Minimalist with maximum weight. Background: very dark charcoal, almost black. Single dominant element: the word "UM." in full-bleed ultra-black condensed type — letterforms touching edges of canvas, creating pressure and containment. Below it, in much smaller regular weight white text, the supporting copy. Lighting: bilateral rim lights — cold left edge, warm right edge — creating a cinematic split. Tactile debossed letterform effect on the "UM." through inner shadow and slight bevel. Acid green micro-dot pattern scattered in the background at 5% opacity. Grain: medium. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger de Deslize</div>
+        <div class="trigger-block">
+          <strong>"Próximo slide: como o Léo pode te ajudar agora."</strong>
+          Transição explícita para o CTA. Usa o nome do Léo como âncora de confiança. Posição: rodapé, fonte bold, cor acid-green.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================================================== -->
+<!-- SLIDE 10 — CTA FINAL -->
+<!-- ===================================================== -->
+<div class="separator"></div>
+<div class="slide-label-banner">
+  <div class="slide-num-big">10</div>
+  <div class="slide-title-small">CTA Final — Automação de DM + Salvar</div>
+</div>
+
+<div class="slide-card">
+  <div class="slide-header">
+    <div class="slide-number">Slide 10</div>
+    <div class="slide-role cta">CTA FINAL</div>
+  </div>
+  <div class="slide-body">
+    <div>
+      <div class="field">
+        <div class="field-label">Headline</div>
+        <div class="headline-display">Comente "EU" e te mando o próximo passo.</div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Copy Estratégico — CTA com Automação de DM</div>
+        <div class="copy-block">
+          Comente <strong>EU</strong> aqui embaixo.<br><br>
+          Vou te mandar no direct um recurso gratuito sobre os primeiros passos após uma recaída.<br><br>
+          Se você conhece alguém que precisa ler isso, manda esse carrossel pra essa pessoa agora. Pode salvar uma vida.<br><br>
+          Salva esse post. Você vai precisar dele num dia difícil.
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="field">
+        <div class="field-label">Direção de Arte — Prompt</div>
+        <div class="prompt-block">
+High-contrast editorial call-to-action design. Background: solid acid-green (#c4ff3e) — full bleed, tactile paper grain at 25% opacity on top. All type in pure black (#080808). Headline in ultra-bold condensed black at 80pt: "COMENTE 'EU'" dominating top 50% of canvas. Below: secondary copy in regular weight. Bottom section: a thin black horizontal rule dividing CTA from the save-nudge. Save nudge formatted as a small badge/tag in bottom-right corner: "SALVA ESSE POST" in small caps black, inside a solid black rounded rectangle with white text. Channel name "SENTA AQUI COM O LÉO" as footer in condensed caps. Lighting: flat, high-key, no shadow — pure graphic energy. Lens: flat lay product photography style, zero distortion. Format: 1080x1350px 4:5.
+        </div>
+      </div>
+      <br>
+      <div class="field">
+        <div class="field-label">Trigger para SALVAR + Re-ver</div>
+        <div class="trigger-block">
+          <strong>Dois ganchos de retenção obrigatórios:</strong>
+          <br><br>
+          1. "Salva esse post. Você vai precisar num dia difícil." — apela para necessidade futura, não atual. Isso aumenta saves de pessoas que estão bem agora mas conhecem o ciclo.
+          <br><br>
+          2. "Volta pro slide 3 e lê o dado de novo. Talvez mude como você enxerga o que está vivendo." — instrução explícita de re-ver o carrossel. Aumenta o dwell time e o alcance orgânico no algoritmo.
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="callout">
+  <h4>Estratégia de Automação de DM — Como Configurar</h4>
+  <p>Configure a automação via ManyChat ou ferramenta nativa do Instagram (Creator Studio): quando alguém comentar a palavra "EU", o bot dispara automaticamente uma DM com o recurso gratuito prometido (pode ser um PDF simples, um link para um episódio do canal, ou um formulário de agendamento). Isso transforma engajamento público em conversa privada, aumenta a taxa de conversão para sessões e gera dados de lead para remarketing.</p>
+</div>
+
+
+<!-- ===== TECH SPECS ===== -->
+<div class="tech-specs">
+  <h3>Especificações Técnicas — Sistema Visual</h3>
+  <div class="specs-grid">
+    <div class="spec-item">
+      <div class="spec-label">Formato</div>
+      <div class="spec-value">4:5 Retrato</div>
+      <div class="spec-sub">1080 × 1350 px</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Paleta Principal</div>
+      <div class="spec-value">#080808 / #f0ece4</div>
+      <div class="spec-sub">Preto profundo + Off-white</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Cor de Acento</div>
+      <div class="spec-value">#c4ff3e</div>
+      <div class="spec-sub">Acid Green — uso pontual</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Tipografia Primária</div>
+      <div class="spec-value">Ultra-Black Condensed</div>
+      <div class="spec-sub">Headlines — Super-Weight 2026</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Tipografia Secundária</div>
+      <div class="spec-value">Regular / Light</div>
+      <div class="spec-sub">Copy de apoio, triggers</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Textura Global</div>
+      <div class="spec-value">Film Grain + Linen</div>
+      <div class="spec-sub">Overlay 20–40% em todos slides</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Iluminação Guia</div>
+      <div class="spec-value">Chiaroscuro / Rim Light</div>
+      <div class="spec-sub">Slides alternados para ritmo</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Slide com Foto</div>
+      <div class="spec-value">Slide 07</div>
+      <div class="spec-sub">Foto real do Léo — editorial grade</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Automação DM</div>
+      <div class="spec-value">Gatilho: "EU"</div>
+      <div class="spec-sub">ManyChat ou IG Creator Studio</div>
+    </div>
+    <div class="spec-item">
+      <div class="spec-label">Slide CTA</div>
+      <div class="spec-value">Fundo Acid-Green</div>
+      <div class="spec-sub">Único slide com cor invertida</div>
+    </div>
+  </div>
+</div>
+
+<div style="max-width:900px; margin:48px auto 0 auto; border-top:1px solid #1a1a1a; padding-top:32px; text-align:center; color:#333; font-size:12px; letter-spacing:1.5px; text-transform:uppercase;">
+  Senta Aqui Com o Léo — Carrossel 04 — Produção Estratégica 2026
+</div>
+
+</body>
+</html>
