@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>📊 Social Report — Semana 30/05 a 05/06/2026 | Senta Aqui com o Léo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0F0F0F;
+      --bg-card: #1A1A1A;
+      --bg-card2: #222222;
+      --amber: #C08840;
+      --amber-light: #E0A855;
+      --amber-dim: #7A5328;
+      --text: #E8E0D4;
+      --text-muted: #8A7F74;
+      --text-dim: #5A5248;
+      --border: #2A2A2A;
+      --green: #4A9E6A;
+      --red: #9E4A4A;
+      --blue: #4A6E9E;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* HEADER */
+    .header {
+      background: linear-gradient(135deg, #1A1000 0%, #0F0F0F 60%);
+      border-bottom: 2px solid var(--amber-dim);
+      padding: 40px 0 36px;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .header-badge {
+      display: inline-block;
+      background: var(--amber-dim);
+      color: var(--amber-light);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 14px;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--amber-light);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .header-meta {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .header-meta span {
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    .header-meta strong {
+      color: var(--text);
+    }
+
+    .data-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #2A1A00;
+      border: 1px solid var(--amber-dim);
+      border-radius: 6px;
+      padding: 8px 16px;
+      margin-top: 18px;
+      font-size: 12px;
+      color: var(--amber);
+    }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 32px;
+    }
+
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-title {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--amber);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* CARDS */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .card-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .card-value {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .card-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .card-na .card-value {
+      font-size: 16px;
+      color: var(--text-dim);
+    }
+
+    .card-platform {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .pill-ig { background: #3A1A2A; color: #E080B0; }
+    .pill-tiktok { background: #001A2A; color: #60C0E0; }
+    .pill-yt { background: #2A0000; color: #E06060; }
+
+    /* STATUS BOX */
+    .status-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .status-icon {
+      font-size: 22px;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .status-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--amber);
+      margin-bottom: 6px;
+    }
+
+    .status-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .status-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    /* COMPETITOR TABLE */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--bg-card);
+    }
+
+    thead tr {
+      background: #1E1400;
+      border-bottom: 1px solid var(--amber-dim);
+    }
+
+    th {
+      padding: 12px 16px;
+      text-align: left;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--amber);
+    }
+
+    td {
+      padding: 12px 16px;
+      font-size: 13px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    tr:last-child td { border-bottom: none; }
+
+    tr:hover td { background: #1E1E1E; }
+
+    .na-text {
+      color: var(--text-dim);
+      font-style: italic;
+    }
+
+    /* DIAGNOSIS */
+    .diagnosis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 16px;
+    }
+
+    .diag-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .diag-card h4 {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--amber);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .diag-card p, .diag-card li {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .diag-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .diag-card ul li::before {
+      content: "→ ";
+      color: var(--amber-dim);
+      font-weight: 600;
+    }
+
+    /* QUESTIONS */
+    .questions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .question-card {
+      background: var(--bg-card);
+      border-left: 3px solid var(--amber-dim);
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+    }
+
+    .question-number {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--amber-dim);
+      margin-bottom: 4px;
+    }
+
+    .question-text {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .question-freq {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* ACTIONS */
+    .actions-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .action-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .action-num {
+      background: var(--amber-dim);
+      color: var(--amber-light);
+      font-weight: 700;
+      font-size: 14px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .action-content h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .action-content p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* GAPS */
+    .gaps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+
+    .gap-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+    }
+
+    .gap-card h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .gap-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .gap-tag {
+      display: inline-block;
+      background: #1A2A1A;
+      color: var(--green);
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 32px;
+      text-align: center;
+    }
+
+    .footer p {
+      font-size: 12px;
+      color: var(--text-dim);
+    }
+
+    .footer strong {
+      color: var(--amber-dim);
+    }
+
+    /* ALERT BANNER */
+    .alert-banner {
+      background: #1E0E00;
+      border: 1px solid var(--amber-dim);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 32px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .alert-banner p {
+      font-size: 13px;
+      color: var(--amber);
+      line-height: 1.5;
+    }
+
+    .alert-banner p strong {
+      color: var(--amber-light);
+    }
+
+    a { color: var(--amber); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-inner">
+    <div class="header-badge">📊 Relatório Semanal de Social Media</div>
+    <h1>Senta Aqui com o Léo — Semana 30/05 a 05/06/2026</h1>
+    <div class="header-meta">
+      <span><strong>Gerado em:</strong> 06/06/2026</span>
+      <span><strong>Período:</strong> 30 de Maio a 05 de Junho de 2026</span>
+      <span><strong>Canal:</strong> @sentaaquicomoleo</span>
+    </div>
+    <div class="data-status">
+      ⚠️ Dados de scraping indisponíveis esta semana — diagnóstico estratégico gerado com base em contexto histórico do canal
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ALERT -->
+  <div class="alert-banner">
+    <span style="font-size:18px; flex-shrink:0;">⚠️</span>
+    <p>
+      <strong>Status de coleta de dados:</strong> Supermetrics (trial expirado em 06/05/2026) · Apify (token não configurado) · APIs públicas (rede bloqueada no ambiente de execução).
+      Todas as métricas de scraping estão marcadas como <em>dados não disponíveis</em>. O diagnóstico (Seção 4), as ações e os gaps foram gerados com base no contexto estratégico documentado do canal.
+      <strong>Para restaurar coleta automática:</strong> Renovar Supermetrics em supermetrics.com/pricing ou configurar a variável <code>APIFY_API_TOKEN</code> no ambiente.
+    </p>
+  </div>
+
+  <!-- SECTION 1: LEO INSTAGRAM -->
+  <div class="section">
+    <div class="section-title">
+      🎙️ Leo — Instagram <span class="pill pill-ig">@senta.aqui.com.o.leo</span>
+    </div>
+    <div class="cards-grid">
+      <div class="card card-na">
+        <div class="card-label">Seguidores totais</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">Semana 30/05–05/06</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Novos seguidores</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">Delta vs semana anterior</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Posts publicados</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">Reels + carrosséis + stories</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Alcance médio</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">Por post</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Taxa de engajamento</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">Likes + comments + saves / alcance</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Melhor post</div>
+        <div class="card-value">dados n/d</div>
+        <div class="card-sub">URL + métricas do post</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 1b: LEO TIKTOK -->
+  <div class="section">
+    <div class="section-title">
+      🎵 Leo — TikTok <span class="pill pill-tiktok">@sentaaquicomoleo</span>
+    </div>
+    <div class="status-box">
+      <div class="status-icon">🔗</div>
+      <div class="status-content">
+        <h4>TikTok Organic — Reconexão necessária</h4>
+        <p>A conexão TikTok Organic no Supermetrics está desconectada. Além disso, sem o Apify token e com a rede bloqueada, não foi possível coletar dados do TikTok esta semana. Para reconectar via Supermetrics, acesse <strong>hub.supermetrics.com/token-management</strong> e reautentique TIKBA.</p>
+      </div>
+    </div>
+    <div class="cards-grid" style="margin-top: 16px;">
+      <div class="card card-na">
+        <div class="card-label">Seguidores TikTok</div>
+        <div class="card-value">dados n/d</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Views totais semana</div>
+        <div class="card-value">dados n/d</div>
+      </div>
+      <div class="card card-na">
+        <div class="card-label">Melhor vídeo</div>
+        <div class="card-value">dados n/d</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: TOP QUESTIONS -->
+  <div class="section">
+    <div class="section-title">💬 Top 3 Perguntas dos Comentários</div>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">
+      Extração de comentários indisponível esta semana. Com base no histórico e posicionamento do canal, as perguntas mais recorrentes do público de Leo são tipicamente:
+    </p>
+    <div class="questions-list">
+      <div class="question-card">
+        <div class="question-number">Pergunta recorrente 01</div>
+        <div class="question-text">"Como falar com um familiar que nega que tem problema com álcool/droga?" </div>
+        <div class="question-freq">Pilar P3 — Família | Alta frequência histórica</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Pergunta recorrente 02</div>
+        <div class="question-text">"Internação é a única saída? Meu filho recusa tratamento."</div>
+        <div class="question-freq">Pilar P1 — Educação | Alta frequência histórica</div>
+      </div>
+      <div class="question-card">
+        <div class="question-number">Pergunta recorrente 03</div>
+        <div class="question-text">"Recaída significa que o tratamento falhou?"</div>
+        <div class="question-freq">Pilar P1 — Educação + Pilar P2 — História | Frequência alta</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: COMPETITORS -->
+  <div class="section">
+    <div class="section-title">🏆 Concorrentes — Semana 30/05 a 05/06/2026</div>
+    <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 16px;">
+      Dados de concorrentes indisponíveis via scraping. Tabela gerada com contexto de posicionamento conhecido.
+    </p>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Handle</th>
+            <th>Plataforma</th>
+            <th>Seguidores</th>
+            <th>Melhor post</th>
+            <th>Eng. estimado</th>
+            <th>Nicho</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>@chrix_montgomery</td>
+            <td><span class="pill pill-ig">Instagram</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Saúde mental / vícios</td>
+          </tr>
+          <tr>
+            <td>@omtmoreira</td>
+            <td><span class="pill pill-ig">Instagram</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Terapia / comportamento</td>
+          </tr>
+          <tr>
+            <td>@ficarlimpo</td>
+            <td><span class="pill pill-ig">Instagram</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Recuperação / sobriedade</td>
+          </tr>
+          <tr>
+            <td>@ctnovocomeco</td>
+            <td><span class="pill pill-ig">Instagram</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Comunidade terapêutica</td>
+          </tr>
+          <tr>
+            <td>@clinicaemunah</td>
+            <td><span class="pill pill-ig">Instagram</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Clínica / tratamento</td>
+          </tr>
+          <tr>
+            <td>@thsoaresoficial</td>
+            <td><span class="pill pill-tiktok">TikTok</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Saúde mental popular</td>
+          </tr>
+          <tr>
+            <td>@meninodovicio</td>
+            <td><span class="pill pill-tiktok">TikTok</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Dependência / entretenimento</td>
+          </tr>
+          <tr>
+            <td>@marcossatobest</td>
+            <td><span class="pill pill-tiktok">TikTok</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Coaching / comportamento</td>
+          </tr>
+          <tr>
+            <td>@humbertofanchini</td>
+            <td><span class="pill pill-tiktok">TikTok</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Psicologia / vícios</td>
+          </tr>
+          <tr>
+            <td>@agabrielaabdalla</td>
+            <td><span class="pill pill-tiktok">TikTok</span></td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td class="na-text">n/d</td>
+            <td>Família / saúde mental</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SECTION 4: DIAGNOSIS -->
+  <div class="section">
+    <div class="section-title">🔍 Diagnóstico da Semana 30/05–05/06/2026</div>
+    <div class="diagnosis-grid">
+
+      <div class="diag-card">
+        <h4>✅ O que tende a funcionar</h4>
+        <ul>
+          <li>Reels com hook de pergunta que dói (ex: "Você já percebeu que ele some quando recebe o salário?") — formato de 60–90s com abertura nos primeiros 3 segundos performa acima da média no nicho</li>
+          <li>Carrosséis com título provocativo sobre sinais que familiares ignoram — alto índice de salvamentos, o que amplia alcance orgânico no Instagram</li>
+          <li>Conteúdo que nomeia a família como protagonista (não só o dependente) — diferencial único de Leo no mercado</li>
+          <li>Posts com dado numérico no gancho (ex: "1 em cada 7 brasileiros...") geram mais compartilhamentos nesse nicho</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <h4>❌ O que tende a não funcionar</h4>
+        <ul>
+          <li>Posts com linguagem clínica ou excesso de jargão — audiência primária são familiares, não profissionais da saúde</li>
+          <li>Conteúdo sem CTA claro — cada post deve ter pelo menos um gatilho de nível 1 (salva), 2 (comenta) ou 3 (consulta)</li>
+          <li>Captions longas sem quebra visual — leitura mobile exige ritmo e espaçamento</li>
+          <li>Reels com abertura lenta (sem hook nos primeiros 2s) — o algoritmo penaliza queda rápida de retenção</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <h4>📉 Causas prováveis de queda de views</h4>
+        <ul>
+          <li>Consistência: posting gap superior a 3 dias reduz alcance orgânico no Instagram Reels e TikTok For You</li>
+          <li>Variação de formato: misturar muitos formatos sem dominar um primeiro dilui o sinal ao algoritmo</li>
+          <li>Engajamento nos primeiros 30min: posts fora do horário de pico do público BR (19h–22h) têm menor impulso inicial</li>
+          <li>Ganchos repetidos: reuso do mesmo padrão de abertura reduz taxa de retenção ao longo do tempo</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <h4>📊 Crescimento desacelerado — causas típicas</h4>
+        <ul>
+          <li>Saturação de hashtags: hashtags muito grandes (#saudemental) entregam pouco; nichar em médias (#codependencia, #familiadedependente) tem melhor conversão</li>
+          <li>Falta de colaboração: creators com audiência similar mas conteúdo complementar (psicólogos, psiquiatras populares) ainda não explorados</li>
+          <li>Ausência de posts de topo de funil extremamente virais que "importam" seguidores do For You/Explore para o perfil</li>
+        </ul>
+      </div>
+
+      <div class="diag-card">
+        <h4>🏆 Quem cresce mais entre concorrentes</h4>
+        <p>Sem dados de scraping esta semana. Padrão histórico no nicho: contas que crescem mais rápido são as que <strong>criam drama narrativo pessoal</strong> (própria história de recuperação) ou que <strong>viralizam em TikTok For You</strong> com conteúdo de alto impacto emocional em 15–30 segundos. Leo tem vantagem única: é conselheiro certificado com vivência pessoal — combinação rara no mercado brasileiro.</p>
+      </div>
+
+      <div class="diag-card">
+        <h4>👀 Conteúdo de concorrente que Leo deveria estudar</h4>
+        <ul>
+          <li>@meninodovicio: como storytelling pessoal + humor gera identificação sem perder autoridade</li>
+          <li>@ficarlimpo: linguagem de comunidade — "a gente" em vez de "você" cria pertencimento, aumenta comentários</li>
+          <li>@agabrielaabdalla: como abordar a família como audiência primária no TikTok, formato que Leo pode replicar</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SECTION GAPS -->
+  <div class="section">
+    <div class="section-title">💡 Gaps de Conteúdo — 3 Oportunidades</div>
+    <div class="gaps-grid">
+      <div class="gap-card">
+        <div class="gap-tag">Gap 01 — Família</div>
+        <h4>Séries "A Mãe do Dependente Pergunta"</h4>
+        <p>Nenhum criador no nicho responde sistematicamente perguntas reais de familiares em formato de série. Leo pode criar uma série semanal onde responde 1 pergunta real (anonimizada) de mãe ou esposa. Altíssima identificação, alto salvamento, posicionamento de autoridade.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-tag">Gap 02 — Educação</div>
+        <h4>Desmistificação de tratamentos populares em BR</h4>
+        <p>Há carência de conteúdo que explica — com dados reais do SUS/DATASUS — por que certas promessas de clínicas não funcionam, ou o que diferencia comunidade terapêutica de clínica de reabilitação. Leo tem autoridade técnica para isso com linguagem acessível.</p>
+      </div>
+      <div class="gap-card">
+        <div class="gap-tag">Gap 03 — Autoridade</div>
+        <h4>Bastidores do trabalho real de conselheiro</h4>
+        <p>Conteúdo de "dia a dia" do conselheiro (sem violar sigilo) — o que é uma sessão, como funciona o acolhimento, o que não é terapia — humaniza Leo e diferencia do perfil de clínica. Formato Reel curto ou vídeo YouTube de 8–15 minutos funciona muito bem para esse ângulo.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION ACTIONS -->
+  <div class="section">
+    <div class="section-title">✅ 3 Ações Prioritárias para a Semana 09/06–15/06/2026</div>
+    <div class="actions-list">
+      <div class="action-item">
+        <div class="action-num">1</div>
+        <div class="action-content">
+          <h4>Restaurar coleta de dados automatizada</h4>
+          <p>Renovar assinatura Supermetrics (<strong>supermetrics.com/pricing</strong>) ou configurar <code>APIFY_API_TOKEN</code> como variável de ambiente no Claude Code. Sem dados reais, o relatório semanal perde sua principal função diagnóstica. Prioridade técnica máxima antes do próximo ciclo.</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">2</div>
+        <div class="action-content">
+          <h4>Publicar 1 Reel de alto impacto com gancho "dói" para a família</h4>
+          <p>Tema sugerido: <em>"Você não causou, não pode controlar e não pode curar — mas pode ajudar"</em> (conceito dos 3 C's do Al-Anon). Hook: "Se você vive esperando que ele mude por você, ouve isso em 60 segundos." Publicar entre 19h–21h (horário de Brasília). CTA: "Salva esse vídeo e manda pra quem precisa."</p>
+        </div>
+      </div>
+      <div class="action-item">
+        <div class="action-num">3</div>
+        <div class="action-content">
+          <h4>Lançar o primeiro episódio da série "A Mãe do Dependente Pergunta"</h4>
+          <p>Criar formato simples: tela dividida ou texto na tela com a pergunta + Leo em vídeo respondendo em 45–60 segundos. Chamar o público para enviar perguntas via direct com a palavra "PERGUNTA". Isso cria engajamento direto, pipeline de conteúdo e sinaliza ao algoritmo que o perfil gera conversas.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>
+    <strong>Relatório gerado automaticamente</strong> em 06/06/2026 · social-media-total-task ·
+    Período: 30 de Maio a 05 de Junho de 2026 ·
+    Canal: @sentaaquicomoleo (Senta Aqui com o Léo)
+  </p>
+  <p style="margin-top: 6px; color: var(--text-dim);">
+    ⚠️ Dados de scraping indisponíveis — diagnóstico gerado com base em contexto estratégico do canal. Renovar Supermetrics para próxima semana.
+  </p>
+</div>
+
+</body>
+</html>
