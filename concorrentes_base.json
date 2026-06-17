@@ -1,0 +1,104 @@
+{
+  "ultima_atualizacao": "2026-05-09",
+  "concorrentes": [
+    {
+      "nome": "Ana Beatriz Barbosa",
+      "username_tiktok": "@draanabeatriz11",
+      "username_instagram": "@anabeatriz11",
+      "plataformas": ["TikTok", "Instagram", "YouTube"],
+      "link_tiktok": "https://www.tiktok.com/@draanabeatriz11",
+      "link_instagram": "https://www.instagram.com/anabeatriz11/",
+      "posicao": "Psiquiatra",
+      "seguidores_instagram_aprox": "7.000.000",
+      "seguidores_tiktok_aprox": "1.400.000",
+      "notas": "Maior audiência do nicho saúde mental no Brasil. Foco em mental health amplo, TDAH, vícios comportamentais. Toca em dependência química ocasionalmente (álcool, tecnologia). Tom: educativo-científico com toque emocional. Ponto fraco: não foca em família do dependente; conteúdo às vezes superficial para quem está em crise real."
+    },
+    {
+      "nome": "Italo Marsili",
+      "username_instagram": "@italomarsili",
+      "username_tiktok": "@italomarsili",
+      "plataformas": ["Instagram", "TikTok"],
+      "link_instagram": "https://www.instagram.com/italomarsili/",
+      "link_tiktok": "https://www.tiktok.com/@italomarsili",
+      "posicao": "Psiquiatra (controverso - ausência de registro CRM ativo)",
+      "seguidores_instagram_aprox": "2.000.000+",
+      "seguidores_tiktok_aprox": "desconhecido",
+      "notas": "Personalidade forte, aborda vícios (álcool, pornografia, redes sociais), mas foco maior em desenvolvimento pessoal. Controvérsia pública sobre registro no CFM. Tom: provocativo, conservador-moral. Ponto fraco: moralismo presente, pouco foco em família, sem ciência sólida."
+    },
+    {
+      "nome": "Eslen Delanogare",
+      "username_instagram": "@eslen.delanogare",
+      "plataformas": ["Instagram", "YouTube"],
+      "link_instagram": "https://www.instagram.com/eslen.delanogare/",
+      "posicao": "Psicólogo e Doutor em Neurociências",
+      "seguidores_instagram_aprox": "2.000.000",
+      "seguidores_tiktok_aprox": "desconhecido",
+      "notas": "Foco em neurociência comportamental e dopamina. Aborda dependência química sob ângulo científico (tolerância, circuito de recompensa). Tom: acadêmico, mas acessível. Ponto fraco: muito cerebral, sem foco em família e sem experiência pessoal com o tema."
+    },
+    {
+      "nome": "Gabriela Abdalla",
+      "username_tiktok": "@agabrielaabdalla",
+      "plataformas": ["TikTok", "YouTube"],
+      "link_tiktok": "https://www.tiktok.com/@agabrielaabdalla",
+      "posicao": "Educadora em recuperação / autoajuda espiritual",
+      "seguidores_tiktok_aprox": "201.500",
+      "curtidas_tiktok_aprox": "1.200.000",
+      "notas": "Nicho mais próximo ao Leo. Foca em dependência química e recuperação. Conteúdo inspiracional com 'sinais da recuperação', 'caminhos para a cura'. Tom: motivacional, espiritual, autoajuda. Ponto fraco: sem base científica sólida, sem foco em família, linguagem genérica. Vende eBooks."
+    },
+    {
+      "nome": "Ruiva Braba",
+      "username_tiktok": "@ruivabraba (verificar handle exato)",
+      "plataformas": ["TikTok"],
+      "link_tiktok": "https://www.tiktok.com/discover/ruiva-braba",
+      "posicao": "Ex-usuária em recuperação (9 meses limpa, 44 anos)",
+      "seguidores_tiktok_aprox": "desconhecido",
+      "notas": "Conteúdo cru e sem suavizar, baseado em experiência pessoal. Palestrante em dependência química. Tom: direto, sem paternalismo, voltado para o próprio adicto. Ponto fraco: sem base científica, sem foco em família, sem formação técnica visível. Alta autenticidade."
+    },
+    {
+      "nome": "Sérgio Mendonça - Fábrica da Sobriedade",
+      "username_tiktok": "@fabricadasobriedade",
+      "plataformas": ["TikTok", "Site"],
+      "link_tiktok": "https://www.tiktok.com/@fabricadasobriedade",
+      "link_site": "https://fabricadasobriedade.com.br",
+      "posicao": "Psicoterapeuta especialista em dependência química",
+      "seguidores_tiktok_aprox": "desconhecido",
+      "notas": "Foco em prevenção de recaída, abordagem com espiritualidade. Conteúdo sobre dependência química e saúde mental. Tom: terapêutico, espiritual, orientado para o dependente. Ponto fraco: mistura espiritualidade sem dados científicos, sem foco em família."
+    },
+    {
+      "nome": "Fernanda Landeiro",
+      "username_instagram": "@fernandalandeiro",
+      "plataformas": ["Instagram"],
+      "link_instagram": "https://www.instagram.com/fernandalandeiro/",
+      "posicao": "Psicóloga / TCC baseada em evidências",
+      "seguidores_instagram_aprox": "588.000",
+      "notas": "Foco em psicologia baseada em evidências (TCC). Toca em comportamentos compulsivos e dependências comportamentais. Tom: clínico, educativo. Ponto fraco: não é especialista em dependência química, não foca em família de dependente."
+    },
+    {
+      "nome": "Descomplicando a Psiquiatria",
+      "username_instagram": "@descomplicandoapsiquiatria",
+      "plataformas": ["Instagram"],
+      "link_instagram": "https://www.instagram.com/descomplicandoapsiquiatria/",
+      "posicao": "Conta educativa de psiquiatria",
+      "seguidores_instagram_aprox": "17.000",
+      "notas": "Pequeno alcance atual. Conteúdo técnico sobre psiquiatria. Não é um competidor direto no curto prazo, mas pode crescer."
+    },
+    {
+      "nome": "Que Droga É Essa?",
+      "username_instagram": "@quedrogaeessa",
+      "plataformas": ["Instagram", "YouTube"],
+      "link_instagram": "https://www.instagram.com/quedrogaeessa/",
+      "posicao": "Projeto de educação sobre drogas - redução de danos",
+      "seguidores_instagram_aprox": "5.200",
+      "notas": "Foco em educação sobre drogas com perspectiva de redução de danos. Audiência pequena. Linguagem jovem, informativa. Não é competidor direto."
+    },
+    {
+      "nome": "SOS Sobriedade",
+      "username_tiktok": "@sossobriedade",
+      "plataformas": ["TikTok"],
+      "link_tiktok": "https://www.tiktok.com/@sossobriedade",
+      "posicao": "Conta de conteúdo sobre sobriedade",
+      "seguidores_tiktok_aprox": "desconhecido",
+      "notas": "Conteúdo motivacional sobre sobriedade. Tom mais espiritual/AA. Dados insuficientes para análise aprofundada."
+    }
+  ]
+}
