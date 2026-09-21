@@ -1,0 +1,218 @@
+{
+  "creator": "Leonardo Oliva",
+  "brand": "Senta Aqui com o Léo",
+  "location": "São Paulo, SP — Vila Nova Conceição",
+  "email": "leonardo@audeamus.com.br",
+  "whatsapp": "+5511910732252",
+  "phone": "+5511915616141",
+  "linktree": "https://linktr.ee/sentaaquicomoleo",
+  "instagram": {
+    "username": "senta.aqui.com.o.leo",
+    "handle": "@senta.aqui.com.o.leo",
+    "profile_url": "https://www.instagram.com/senta.aqui.com.o.leo",
+    "followers": 11413,
+    "views_30d": 289276,
+    "interactions_30d": 26472,
+    "posts_published": 415,
+    "last_synced": "2026-09-20",
+    "source": "apify instagram-profile-scraper (live)",
+    "note_stale_fields": "views_30d/interactions_30d need Windsor insights (license expired) — not refreshed since old sync",
+    "target_followers": 10000,
+    "target_date": "2026-07-01",
+    "best_posting_time": "19:00",
+    "best_days": [
+      "Segunda",
+      "Quarta",
+      "Sexta"
+    ],
+    "formats_priority": [
+      "Reels",
+      "Carrossel educacional 7-10 slides",
+      "Stories com enquete",
+      "Post Pills (30s)"
+    ],
+    "monitor_recent_posts": 20,
+    "post_ids_to_monitor": []
+  },
+  "tiktok": {
+    "username": "sentaaquicomoleo",
+    "handle": "@sentaaquicomoleo",
+    "profile_url": "https://www.tiktok.com/@sentaaquicomoleo",
+    "followers": 69271,
+    "views_30d": 481287,
+    "likes_total": 407232,
+    "likes_30d": 14086,
+    "shares_30d": 1838,
+    "videos_published": 856,
+    "last_synced": "2026-09-20",
+    "source": "apify clockworks/free-tiktok-scraper (live)",
+    "note_stale_fields": "views_30d/likes_30d/shares_30d need Windsor insights (license expired) — not refreshed since old sync",
+    "target_followers": 75000,
+    "best_posting_time": "20:00",
+    "best_days": [
+      "Segunda",
+      "Terça",
+      "Quinta",
+      "Sexta",
+      "Sábado"
+    ],
+    "live_day": "Quarta (20h) — Quarta com o Léo",
+    "formats_priority": [
+      "Vídeos educacionais diretos",
+      "Formato 5 sinais",
+      "Testemunho pessoal",
+      "Resposta a comentário"
+    ],
+    "monitor_recent_videos": 20,
+    "video_ids_to_monitor": []
+  },
+  "youtube": {
+    "channel_handle": "@sentaaquicomoleo",
+    "profile_url": "https://www.youtube.com/@sentaaquicomoleo",
+    "subscribers": 294,
+    "views_total": 104174,
+    "videos_published": 646,
+    "best_posting_time": "18:00",
+    "focus": "Conteúdo evergreen — indexável no Google. Prioridade baixa agora.",
+    "monitor_recent_videos": 10,
+    "last_scraped": "2026-09-19T11:19:06.448436+00:00",
+    "source": "yt-dlp"
+  },
+  "linkedin": {
+    "url": "https://www.linkedin.com/in/sentaaquicomoleo",
+    "priority": "baixa"
+  },
+  "top_viral_videos": [
+    {
+      "platform": "tiktok",
+      "title": "4 regras radicais para vencer o vício em cocaína",
+      "views": 1200000,
+      "likes": 33880,
+      "shares": 12762,
+      "new_followers": 13410,
+      "url": "https://www.tiktok.com/@sentaaquicomoleo/video/7542581252272983352"
+    },
+    {
+      "platform": "tiktok",
+      "title": "Comportamentos bizarros de quem usa cocaína",
+      "views": 235906,
+      "likes": 7881,
+      "shares": 1010,
+      "url": "https://www.tiktok.com/@sentaaquicomoleo/video/7614950740942949648"
+    },
+    {
+      "platform": "tiktok",
+      "title": "5 sinais físicos de quem usa cocaína",
+      "views": 171900,
+      "likes": 5055,
+      "shares": 462,
+      "url": "https://www.tiktok.com/@sentaaquicomoleo/video/7605238940521483521"
+    },
+    {
+      "platform": "tiktok",
+      "title": "Desculpas de quem usa pelo nariz — reconheça",
+      "views": 88100,
+      "likes": 2328,
+      "shares": 432,
+      "url": "https://www.tiktok.com/@sentaaquicomoleo/video/7613006204238875925"
+    }
+  ],
+  "competitors_brazil": [
+    {
+      "name": "Thiago Soares",
+      "handle_tiktok": "@thsoaresoficial",
+      "handle_instagram": "@thiagoeuversuseu",
+      "platform_primary": "TikTok",
+      "followers_tiktok": "125.6K",
+      "threat_level": "ALTO — mesmo nicho, mesma plataforma, mesmo formato",
+      "note": "Monitorar semanalmente. Formato mais similar ao Léo no TikTok. Certified — sem relato pessoal.",
+      "tiktok_url": "https://www.tiktok.com/@thsoaresoficial",
+      "instagram_url": "https://www.instagram.com/thiagoeuversuseu/"
+    },
+    {
+      "name": "Tereza Leite",
+      "handle_instagram": "@tereza.conselheira",
+      "handle_tiktok": "@tereza.conselheira",
+      "platform_primary": "Instagram + TikTok",
+      "followers_tiktok": "53.9K",
+      "followers_instagram": "166.7K",
+      "threat_level": "ALTO — conselheira certificada + história de recuperação. Perfil mais próximo ao Léo.",
+      "instagram_url": "https://www.instagram.com/tereza.conselheira/",
+      "tiktok_url": "https://www.tiktok.com/@tereza.conselheira"
+    },
+    {
+      "name": "Chris Montgomery",
+      "handle_instagram": "@chrix_montgomery",
+      "platform_primary": "Instagram",
+      "followers_instagram": "978K",
+      "threat_level": "Médio — maior conta PT-BR do nicho, sem credencial clínica, sem TikTok forte",
+      "instagram_url": "https://www.instagram.com/chrix_montgomery/"
+    },
+    {
+      "name": "Lucas (Menino do Vício)",
+      "handle_tiktok": "@meninodovicio",
+      "platform_primary": "TikTok",
+      "followers_tiktok": "250K+",
+      "threat_level": "Baixo — PARCEIRO POTENCIAL. Perfis complementares: storytelling dele + autoridade clínica do Léo.",
+      "tiktok_url": "https://www.tiktok.com/@meninodovicio"
+    },
+    {
+      "name": "Matheus Moreira",
+      "handle_instagram": "@omtmoreira",
+      "platform_primary": "Instagram",
+      "followers_instagram": "148K",
+      "threat_level": "Médio — terapeuta certificado, sem relato pessoal",
+      "instagram_url": "https://www.instagram.com/omtmoreira/"
+    },
+    {
+      "name": "Ficar Limpo",
+      "handle_instagram": "@ficarlimpo",
+      "platform_primary": "Instagram",
+      "followers_instagram": "341K",
+      "threat_level": "Médio — operação editorial institucional, sem voz pessoal",
+      "instagram_url": "https://www.instagram.com/ficarlimpo/"
+    },
+    {
+      "name": "Humberto Fanchini",
+      "handle_tiktok": "@humbertofanchini",
+      "platform_primary": "TikTok",
+      "threat_level": "Médio — tem curso online em dependência",
+      "tiktok_url": "https://www.tiktok.com/@humbertofanchini"
+    },
+    {
+      "name": "Marcos Sato",
+      "handle_tiktok": "@marcossatobest",
+      "platform_primary": "TikTok",
+      "threat_level": "Reduzido — possível mudança de nicho para relacionamentos em 2025-2026",
+      "tiktok_url": "https://www.tiktok.com/@marcossatobest"
+    }
+  ],
+  "competitors_international": [
+    {
+      "name": "Connor (The Sober Plug)",
+      "handle_tiktok": "@thesoberplug",
+      "followers_tiktok": "531.7K",
+      "relevance": "BENCHMARK DE LONGO PRAZO — ex-adicto a dono de clínica. Arco narrativo idêntico ao que Léo está construindo.",
+      "tiktok_url": "https://www.tiktok.com/@thesoberplug"
+    },
+    {
+      "name": "Amber Hollingsworth (Put The Shovel Down)",
+      "channel_youtube": "@PutTheShovelDown",
+      "subscribers_youtube": "1M",
+      "relevance": "Referência máxima de formato YouTube — conselheira licenciada, famílias de dependentes, 1000+ vídeos.",
+      "youtube_url": "https://www.youtube.com/@PutTheShovelDown"
+    },
+    {
+      "name": "The Rewired Soul",
+      "channel_youtube": "@TheRewiredSoul",
+      "subscribers_youtube": "80.5K",
+      "relevance": "Formato mais próximo do Léo: ciência + experiência vivida — referência de escalabilidade no YouTube.",
+      "youtube_url": "https://www.youtube.com/@TheRewiredSoul"
+    }
+  ],
+  "strategic_actions": {
+    "monitor_weekly": "@thsoaresoficial — mesmo nicho, mesma plataforma",
+    "collab_priority": "@meninodovicio — perfis complementares, zero conflito",
+    "benchmark_longterm": "@thesoberplug — arco adicto → conselheiro → dono de clínica"
+  }
+}
