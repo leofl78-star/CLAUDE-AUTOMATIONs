@@ -1,5 +1,5 @@
-// Renders every .slide in carousel.html to PNG (1080x1350 master; variant "1x1" → 1080x1080).
-// Usage: node render.mjs <outDir> [variant]   (variant: 1x1 → 1080x1080)
+// Renders every .slide in carousel.html to PNG (1080x1350 master).
+// Usage: node render.mjs <outDir> [variant]   (variant: 1x1 → 1080x1080, 9x16 → 1080x1920)
 import { chromium } from 'playwright';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -13,7 +13,7 @@ fs.mkdirSync(outDir, { recursive: true });
 for (const f of fs.readdirSync(outDir)) if (/^\d{2}_.+\.png$/.test(f)) fs.rmSync(path.join(outDir, f));
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1160, height: 1520 }, deviceScaleFactor: 1 });
+const page = await browser.newPage({ viewport: { width: 1160, height: 2000 }, deviceScaleFactor: 1 });
 await page.goto(pathToFileURL(path.join(here, 'carousel.html')).href + (variant ? `?v=${variant}` : ''));
 await page.evaluate(() => document.fonts.ready);
 await page.waitForFunction(() => [...document.images].every(i => i.complete));

@@ -1,0 +1,38 @@
+/* 1080x1920 (9:16) variant for Stories, Reels and TikTok. Same slides.js, plus slides-9x16.js for the CTA copy.
+   Dia 1 story rules: nothing important in the top 250px or the bottom 300px, 80px side margin,
+   wordmark top-left at 250px. Type keeps the 4:5 sizes: the width is the same 1080px on the phone. */
+.slide { height: 1920px; }
+:root { --m: 80px; --photo-h: 1080px; --safe-top: 250px; --safe-bottom: 300px; }
+.camada { padding: calc(var(--safe-top) + 40px) var(--m) calc(var(--safe-bottom) + 60px); }
+
+/* photo: taller frame, dark band under the Stories header, dark patch under the wordmark */
+.bg::after { background: radial-gradient(ellipse 620px 300px at 0% 268px, rgba(12,14,8,0.85) 0%, rgba(12,14,8,0.55) 45%, rgba(12,14,8,0) 100%), linear-gradient(to bottom, rgba(12,14,8,0.72) 0%, rgba(12,14,8,0) 20%, rgba(12,14,8,0) 42%, var(--fade-ground) 70%, var(--black) 97%); }
+
+/* wordmark: top-left, under the Stories header */
+.marca.tr, .marca.tl { top: var(--safe-top); left: var(--m); right: auto; }
+.marca.bl { bottom: var(--safe-bottom); left: var(--m); }
+.cover .swipe, .turn .swipe { bottom: var(--safe-bottom); right: var(--m); }
+
+/* cover: big photo on top, text in the lower third */
+.cover .camada { justify-content: flex-end; padding-bottom: calc(var(--safe-bottom) + 150px); }
+.cover h1.serif { font-size: 94px; }
+
+/* Léo: the photo is 9:16 already, shown whole and lifted so the face sits above the text */
+.leo .foto { top: -350px; height: 1920px; }
+.leo .fusao { height: 1920px; background: linear-gradient(to left, rgba(12,14,8,1) 0%, rgba(12,14,8,1) 34%, rgba(12,14,8,0) 54%), linear-gradient(to top, var(--black) 0%, var(--black) 38%, rgba(12,14,8,0.9) 45%, var(--fade-ground) 50%, rgba(12,14,8,0) 60%); }
+.leo .scrim-top { height: 380px; background: linear-gradient(to bottom, rgba(12,14,8,.9) 0%, rgba(12,14,8,.6) 45%, transparent 100%); }
+.leo .marca.tl { left: auto; right: var(--m); }
+.leo .camada { padding-bottom: calc(var(--safe-bottom) + 60px); }
+.leo .sig { bottom: calc(var(--safe-bottom) + 50px); }
+.leo h2.serif { font-size: 62px; }
+
+/* myth and turn have the whole height to themselves: larger type */
+.myth .mito { font-size: 78px; } .myth .truth { font-size: 32px; }
+.myth .body p { font-size: 37px; } .myth .note { font-size: 56px; }
+.turn .line { font-size: 70px; } .turn .line + .line { margin-top: 36px; }
+
+/* per-photo frames: the taller crop would show the second panel of the diptych (a party with shots)
+   and the beer bottle in his hand, both hidden in 4:5 */
+.bg:has(img[src$="mulher_tequila.jpg"]) { height: 930px; }
+.bg:has(img[src$="homem_na_sarjeta.jpg"]) { height: 900px; }
+.bg img[src$="homem_na_sarjeta.jpg"] { object-position: 50% 5% !important; }
