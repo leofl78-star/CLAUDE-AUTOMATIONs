@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel · Dia 1…</title>
+<link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+<div id="deck"></div>
+<script>
+// ?v=1x1 adds carousel-1x1.css (1080x1080), ?v=9x16 adds carousel-9x16.css (1080x1920). slides.js is shared.
+const VARIANT = new URLSearchParams(location.search).get('v') || '';
+if (VARIANT) document.write(`<link rel="stylesheet" href="carousel-${VARIANT}.css">`);
+</script>
+<script src="slides.js"></script>
+<script>
+// 9:16 only: small copy patch for Stories/TikTok (no comment box or swipe in Stories)
+if (VARIANT === '9x16') document.write('<script src="slides-9x16.js"><\/script>');
+</script>
+<script>
+const SOL = w => `<svg class="sol" viewBox="0 0 120 60" style="width:${w}px;height:${w / 2}px" aria-hidden="true"><g><line x1="12" y1="44" x2="108" y2="44"/><path d="M 36 44 A 24 24 0 0 1 84 44"/></g></svg>`;
+const MARCA = pos => `<div class="marca ${pos}">${SOL(60)}<span class="word">Dia 1<i>…</i></span></div>`;
+const pad = n => String(n).padStart(2, '0');
+const bg = s => s.bg ? `<div class="bg"><img src="img/${s.bg}" alt=""${s.bgPos ? ` style="object-position:${s.bgPos}"` : ''}></div>` : '';
+const um = s => s.one ? `<div class="um ${s.one.kind || ''}" style="font-size:${s.one.size}px;${s.one.pos}">1</div>` : '';
+const eyebrow = s => s.eyebrow ? `<div class="eyebrow">${s.eyebrow}</div>` : '';
+const body = s => (s.body && s.body.length) ? `<div class="body">${s.body.map(p => `<p>${p}</p>`).join('')}</div>` : '';
+const list = s => s.list ? `<ul class="${s.listStyle || 'dot'}">${s.list.map(x => `<li>${x}</li>`).join('')}</ul>` : '';
+const rows = s => s.rows ? `<div class="rows">${s.rows.map(r => `<div class="linha"><div class="k">${r.k}</div><div class="v">${r.v}</div></div>`).join('')}</div>` : '';
+const note = s => s.note ? `<div class="note">${s.note}</div>` : '';
+const shell = (s, inner, marca = 'tr') => `${bg(s)}${um(s)}<div class="${s.glow === 'top' ? 'vinheta-top' : 'vinheta'}"></div><div class="camada"><div class="stack">${inner}</div></div>${marca ? MARCA(marca) : ''}<div class="grain"></div>`;
+
+const render = {
+  cover: s => shell(s, `${eyebrow(s)}<h1 class="serif">${s.title}</h1>${s.sub ? `<div class="sub">${s.sub}</div>` : ''}`, 'bl') + `<div class="swipe">${s.swipe || 'arrasta →'}</div>`,
+  item: s => shell(s, `${eyebrow(s)}<h2 class="serif">${s.title}</h2>${body(s)}${list(s)}${rows(s)}${note(s)}`),
+  myth: s => shell(s, `${eyebrow(s)}<div class="mito">${s.myth}</div><div class="truth">${s.truthLabel}</div><div class="regra" style="margin:22px 0 30px"></div>${body(s)}${note(s)}`),
+  turn: s => shell(s, `${eyebrow(s)}${s.lines.map(l => `<div class="line${l.accent ? ' accent' : ''}">${l.text}</div>`).join('')}${s.nosig ? '' : '<div class="sig">— Léo</div>'}`) + (s.swipe ? `<div class="swipe">${s.swipe}</div>` : ''),
+  leo: s => `<div class="avatar"><img src="img/${s.avatar || s.photo}" alt="Léo"></div><div class="foto"><img src="img/${s.photo}" alt="Léo"${s.photoPos ? ` style="object-position:${s.photoPos}"` : ''}></div><div class="scrim-top"></div><div class="fusao"></div><div class="vinheta"></div>
+    <div class="camada"><div class="stack"><div class="hello">${s.hello}</div><h2 class="serif">${s.title}</h2>
+      <div class="offer"><div class="price"><small>R$</small>${s.price}</div><div class="what"><b>${s.offerTitle}</b><span>${s.offerSub}</span></div></div>
+      <div class="cta-row"><span class="btnish">${s.ctaVerb || 'Comenta'} <b>${s.keyword}</b></span><span class="hint">${s.hint}</span></div>
+      ${s.private ? `<div class="private">${s.private}</div>` : ''}${s.crisis ? `<div class="crisis">${s.crisis}</div>` : ''}</div></div>
+    <div class="sig">— Léo</div>${MARCA('tl')}<div class="grain"></div>`,
+};
+
+document.getElementById('deck').innerHTML = SLIDES.map((s, i) =>
+  `<section class="slide ${s.type}" id="s${pad(i + 1)}" data-name="${s.name || ''}">${render[s.type](s)}</section>`).join('');
+</script>
+</body>
+</html>

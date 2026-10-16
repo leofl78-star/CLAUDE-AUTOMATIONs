@@ -1,0 +1,49 @@
+/* 1080x1080 square variant. Same slides.js; tighter type and a circular avatar on the Léo slide. */
+.slide { height: 1080px; }
+:root { --pad-y: 84px; --photo-h: 600px; }
+h1.serif { font-size: 90px; }
+h2.serif { font-size: 62px; }
+.eyebrow { font-size: 22px; margin-bottom: 22px; }
+.body p { font-size: 30px; line-height: 1.42; }
+.body p + p { margin-top: 12px; }
+.stack > * + .body, .stack > * + ul, .stack > * + .rows { margin-top: 26px; }
+.note { font-size: 42px; margin-top: 28px; }
+ul.dot { gap: 12px; } ul.dot li { font-size: 30px; } ul.dot li::before { top: 20px; }
+ul.quote { gap: 10px; } ul.quote li { font-size: 40px; }
+.rows .linha { padding: 16px 0 16px 42px; } .rows .linha::before { top: 29px; }
+.rows .k { font-size: 23px; margin-bottom: 4px; } .rows .v { font-size: 28px; }
+.cover .camada { padding-bottom: 150px; }
+.cover .sub { font-size: 32px; margin-top: 28px; }
+.myth .mito { font-size: 56px; } .myth .truth { font-size: 27px; margin-top: 32px; }
+.turn .line { font-size: 52px; } .turn .eyebrow { margin-bottom: 32px; } .sig { font-size: 54px; margin-top: 28px; }
+/* Léo: circular avatar instead of the big photo (Dia 1 endcard avatar crop) */
+.leo .foto, .leo .fusao, .leo .scrim-top { display: none; }
+.leo .avatar { display: block; position: absolute; z-index: 15; left: var(--m); top: 84px; width: 230px; height: 230px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 0 2px var(--line-strong), 0 18px 50px rgba(0,0,0,0.5); }
+.leo .avatar img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(.9) sepia(.14) brightness(.94) contrast(1.03); }
+.leo .marca.tl { left: auto; right: var(--corner); }
+.leo .camada { padding-bottom: 72px; }
+.leo .hello { font-size: 40px; margin-bottom: 8px; }
+.leo h2.serif { font-size: 50px; }
+.offer { margin-top: 24px; padding: 18px 26px; } .offer .price { font-size: 80px; }
+.offer .what b { font-size: 29px; } .offer .what span { font-size: 24px; }
+.cta-row { margin-top: 22px; } .btnish { font-size: 32px; padding: 20px 34px; } .btnish b { font-size: 44px; }
+.cta-row .hint { font-size: 25px; }
+.leo .private { margin-top: 18px; font-size: 26px; } .leo .crisis { font-size: 25px; margin-top: 6px; }
+.leo .sig { bottom: 64px; font-size: 50px; }
+.cover h1.serif { font-size: 90px; }
+
+/* ── QA pass ── */
+.eyebrow { font-size: 26px; }
+.cover .eyebrow { font-size: 26px; letter-spacing: 5px; }
+.rows .k { font-size: 25px; }
+.leo .crisis { font-size: 29px; }
+.leo .private { font-size: 28px; }
+/* the profile grid crops square posts to 3:4: keep the cover inside the central 810px */
+.cover .camada { padding-left: 180px; padding-right: 180px; }
+.cover h1.serif { font-size: 74px; }
+.cover .marca.bl { left: 180px; }
+.cover .swipe { right: 180px; }
+.bg img[src$="homem_na_sarjeta.jpg"] { object-position: 50% 24% !important; }
+.bg img[src$="man_and_beers_trying_to_stop.jpg"] { object-position: 50% 20% !important; }
+.offer .what span { font-size: 27px; }
+.cta-row .hint { font-size: 28px; }

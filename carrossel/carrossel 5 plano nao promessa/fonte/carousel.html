@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Carrossel · A Família que Fica</title>
+<link rel="stylesheet" href="carousel.css">
+</head>
+<body>
+<div id="deck"></div>
+<script>
+// ?v=4x5 loads slides-4x5.js and carousel-4x5.css (SocialBee / API version: 10 slides, 1080x1350)
+const VARIANT = new URLSearchParams(location.search).get('v') || '';
+document.write(`<script src="slides${VARIANT ? '-' + VARIANT : ''}.js"><\/script>`);
+if (VARIANT) document.write(`<link rel="stylesheet" href="carousel-${VARIANT}.css">`);
+</script>
+<script>
+const RINGS = (size, stroke = '#C08840') =>
+  `<svg width="${size * 2}" height="${size}" viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="${stroke}" stroke-width="3.2"><circle cx="38" cy="30" r="22"/><circle cx="82" cy="30" r="22"/><path d="M 60 12 A 22 22 0 0 0 60 48"/></g></svg>`;
+
+const total = SLIDES.length;
+const pad = n => String(n).padStart(2, '0');
+
+function footer(i, last, label) {
+  const right = last ? '' : `<span class="swipe">${label || (i === 0 ? 'Arrasta' : 'Continua')}</span>`;
+  return `<div class="footer"><div class="id">${RINGS(26)}<span class="handle">${META.handle}</span></div>${right}</div>`;
+}
+function topbar(s, i) {
+  const segs = Array.from({ length: total }, (_, k) => `<i class="${k <= i ? 'on' : ''}"></i>`).join('');
+  return `<div class="progress" aria-hidden="true">${segs}</div><div class="topbar">${s.eyebrow ? `<span class="eyebrow${s.eyebrowMuted ? ' muted' : ''}">${s.eyebrow}</span>` : ''}</div>`;
+}
+function bg(s) {
+  if (!s.bg) return '';
+  const pos = s.bgPos ? ` style="object-position:${s.bgPos}"` : '';
+  return `<div class="bg"><img src="img/${s.bg}"${pos} alt=""></div>`;
+}
+
+const render = {
+  cover: (s, i) => `${bg(s)}<div class="grain"></div><div class="content">${topbar(s, i)}
+    <div class="stack"><hr class="rule"><h1>${s.title}</h1>${s.sub ? `<div class="sub">${s.sub}</div>` : ''}</div></div>${footer(i)}`,
+  item: (s, i) => `${bg(s)}<div class="grain"></div><div class="content">${topbar(s, i)}
+    <div class="stack">${s.num ? `<div class="num">${s.num}</div><hr class="rule">` : ''}<h2>${s.title}</h2>${(s.body || []).map(p => `<p>${p}</p>`).join('')}${s.list ? `<ul class="${s.listStyle || 'dot'}">${s.list.map(x => `<li>${x}</li>`).join('')}</ul>` : ''}${s.after ? `<p>${s.after}</p>` : ''}${s.note ? `<div class="note">${s.note}</div>` : ''}</div></div>${footer(i)}`,
+  stat: (s, i) => `${bg(s)}<div class="grain"></div><div class="content">${topbar(s, i)}
+    <div class="stack"><div class="value">${s.statValue}</div><hr class="rule" style="margin-top:34px"><div class="label">${s.statLabel}</div>${(s.body || []).map(p => `<p>${p}</p>`).join('')}${s.source ? `<div class="source">${s.source}</div>` : ''}</div></div>${footer(i)}`,
+  turn: (s, i) => `${bg(s)}<div class="grain"></div><div class="content">${topbar(s, i)}
+    <div class="stack"><div class="ornament">${RINGS(34)}</div>${s.lines.map(l => `<div class="line${l.accent ? ' accent' : ''}">${l.text}</div>`).join('')}${s.sig ? `<div class="sig">${s.sig}</div>` : ''}</div></div>${footer(i, false, s.swipe)}`,
+  leo: (s, i) => `<div class="photo"><img src="img/${s.photo}" alt="Léo"${s.photoPos ? ` style="object-position:${s.photoPos}"` : ''}></div><div class="grain"></div><div class="content">${topbar(s, i)}
+    <div class="stack"><div class="hello">${s.hello}</div><h2>${s.title}</h2>
+      <div class="offer"><div class="price"><small>R$</small>${s.price}</div><div class="what"><b>${s.offerTitle}</b><span>${s.offerSub}</span></div></div>
+      <div class="cta-row"><span class="btn">Comenta <b>${s.keyword}</b></span><span class="hint">${s.hint}</span></div>
+      ${s.private ? `<div class="private-line">${s.private}</div>` : ''}
+      ${s.crisis ? `<div class="crisis-line">${s.crisis}</div>` : ''}</div></div>
+    ${footer(i, true)}`,
+};
+
+document.getElementById('deck').innerHTML = SLIDES.map((s, i) =>
+  `<section class="slide ${s.type}" id="s${pad(i + 1)}" data-name="${s.name || ''}">${render[s.type](s, i)}</section>`).join('');
+</script>
+</body>
+</html>
