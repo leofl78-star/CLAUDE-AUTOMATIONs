@@ -7,7 +7,12 @@
 </head>
 <body>
 <div id="deck"></div>
-<script src="slides.js"></script>
+<script>
+// ?v=4x5 loads slides-4x5.js and carousel-4x5.css (SocialBee / API version: 10 slides, 1080x1350)
+const VARIANT = new URLSearchParams(location.search).get('v') || '';
+document.write(`<script src="slides${VARIANT ? '-' + VARIANT : ''}.js"><\/script>`);
+if (VARIANT) document.write(`<link rel="stylesheet" href="carousel-${VARIANT}.css">`);
+</script>
 <script>
 const RINGS = (size, stroke = '#C08840') =>
   `<svg width="${size * 2}" height="${size}" viewBox="0 0 120 60" aria-hidden="true"><g fill="none" stroke="${stroke}" stroke-width="3.2"><circle cx="38" cy="30" r="22"/><circle cx="82" cy="30" r="22"/><path d="M 60 12 A 22 22 0 0 0 60 48"/></g></svg>`;

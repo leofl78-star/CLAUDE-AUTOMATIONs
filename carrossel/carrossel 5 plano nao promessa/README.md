@@ -11,6 +11,17 @@ Base de conteúdo: carrossel de outro criador sobre promessa x plano na prevenç
 3. Legenda em `legenda.txt`.
 4. Link da consulta pra mandar no direct: https://pay.hotmart.com/X107019993F?off=n6b3xcvh
 
+## Postar pelo SocialBee
+
+Use a pasta `socialbee-4x5/`: 10 slides em 1080x1350 (4:5), o limite da API do Instagram que o SocialBee usa. Em relação aos 12 slides: os slides 4 e 5 viraram um só e o slide 6 (rotina) saiu.
+
+1. No SocialBee, crie um post novo e escolha o perfil do Instagram. O carrossel direto só funciona com perfil Business ligado a uma página do Facebook.
+2. Suba as 10 imagens na ordem dos arquivos, 01 a 10, e confira a ordem na prévia.
+3. Cole a legenda de `legenda.txt`.
+4. Agende ou publique e confira o post no app depois que sair.
+
+O conector do SocialBee no Zapier aceita uma imagem por post, por isso o carrossel é montado à mão no SocialBee.
+
 ## Confirmar antes de postar
 
 - "6 anos limpo" (slides 1, 10 e 12).
@@ -29,9 +40,10 @@ Texto em `fonte/slides.js`, estilo em `fonte/carousel.css`. Para gerar os PNGs (
 
 ```
 cd fonte
-node render.mjs ..
+node render.mjs ..                      # 12 slides, 1080x1440
+node render.mjs ../socialbee-4x5 4x5    # 10 slides, 1080x1350
 ```
 
-O script substitui só os arquivos `NN_nome.png` da pasta de saída.
+O script substitui só os arquivos `NN_nome.png` da pasta de saída. A versão 4x5 usa `fonte/slides-4x5.js` e `fonte/carousel-4x5.css` por cima do estilo principal: mudou um texto em `slides.js`, mude também em `slides-4x5.js`.
 
 As fotos de fundo são da pasta `midia for tiktok`, recebem um tratamento âmbar no CSS. `mulher_tequila.jpg` foi retocada (artefato branco em cima do celular removido). A foto do Léo é `leo-restaurante.jpg`, do design system.

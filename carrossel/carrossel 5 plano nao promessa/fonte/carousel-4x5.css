@@ -1,0 +1,10 @@
+/* 4:5 variant (1080x1350): 90px shorter than the 3:4 master. */
+.slide { height: 1350px; }
+.content { padding-top: 56px; }
+.progress { margin-bottom: 38px; }
+.item .stack { min-height: 840px; margin-bottom: 186px; }
+.stat .stack, .cover .stack { margin-bottom: 186px; }
+.leo .photo { top: -95px; }
+.leo h2 { font-size: 54px; margin-bottom: 26px; }
+.private-line { margin-top: 26px; }
+.leo .stack { margin-bottom: 158px; }

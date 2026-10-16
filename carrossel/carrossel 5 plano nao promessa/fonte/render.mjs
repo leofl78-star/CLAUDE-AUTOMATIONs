@@ -1,5 +1,5 @@
 // Renders every .slide in carousel.html to a 1080x1440 PNG.
-// Usage: node render.mjs <outDir>
+// Usage: node render.mjs <outDir> [variant]   (variant: 4x5 → 10 slides at 1080x1350)
 import { chromium } from 'playwright';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import path from 'node:path';
@@ -7,13 +7,14 @@ import fs from 'node:fs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const outDir = path.resolve(process.argv[2] || path.join(here, 'out'));
+const variant = process.argv[3] || '';
 fs.mkdirSync(outDir, { recursive: true });
 // drop stale slide PNGs only (NN_name.png); never delete the folder itself
 for (const f of fs.readdirSync(outDir)) if (/^\d{2}_.+\.png$/.test(f)) fs.rmSync(path.join(outDir, f));
 
 const browser = await chromium.launch();
 const page = await browser.newPage({ viewport: { width: 1160, height: 1520 }, deviceScaleFactor: 1 });
-await page.goto(pathToFileURL(path.join(here, 'carousel.html')).href);
+await page.goto(pathToFileURL(path.join(here, 'carousel.html')).href + (variant ? `?v=${variant}` : ''));
 await page.evaluate(() => document.fonts.ready);
 await page.waitForFunction(() => [...document.images].every(i => i.complete));
 const broken = await page.evaluate(() => [...document.images].filter(i => !i.naturalWidth).map(i => i.getAttribute('src')));
