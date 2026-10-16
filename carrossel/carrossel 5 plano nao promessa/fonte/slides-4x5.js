@@ -45,8 +45,8 @@ const SLIDES = [
   "list": [
    "Lembra como era bom?",
    "Quem disse que você tem problema?",
-   "Hoje tem motivo, ninguém é de ferro.",
-   "Amanhã eu recomeço."
+   "Hoje tem motivo. Quem é de ferro?",
+   "Amanhã você recomeça, né?"
   ],
   "listStyle": "quote",
   "note": "Discutir com ela na hora é jogar no campo dela.",
@@ -68,7 +68,7 @@ const SLIDES = [
   "listStyle": "dot",
   "note": "Escreve num dia calmo, de preferência com alguém.",
   "bg": "adolecente_asking_for_help.jpg",
-  "bgPos": "50% 30%"
+  "bgPos": "50% 36%"
  },
  {
   "type": "item",
