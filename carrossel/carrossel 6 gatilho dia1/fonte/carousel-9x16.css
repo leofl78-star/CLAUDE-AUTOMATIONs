@@ -10,12 +10,16 @@
 
 /* wordmark: top-left, under the Stories header */
 .marca.tr, .marca.tl { top: var(--safe-top); left: var(--m); right: auto; }
-.marca.bl { bottom: var(--safe-bottom); left: var(--m); }
-.cover .swipe, .turn .swipe { bottom: var(--safe-bottom); right: var(--m); }
+/* cover too: story rule puts the wordmark top-left, and bottom-left is under the TikTok caption */
+.marca.bl { top: var(--safe-top); bottom: auto; left: var(--m); }
+/* cues and signature stay left of the TikTok action column (x > ~930) */
+.cover .swipe, .turn .swipe { bottom: var(--safe-bottom); right: 160px; }
 
 /* cover: big photo on top, text in the lower third */
 .cover .camada { justify-content: flex-end; padding-bottom: calc(var(--safe-bottom) + 150px); }
-.cover h1.serif { font-size: 94px; }
+.cover h1.serif { font-size: 88px; }
+/* giant 1 follows the text down, as in 4:5 (stem behind "porta.") */
+.cover .um { top: 375px !important; }
 
 /* Léo: the photo is 9:16 already, shown whole and lifted so the face sits above the text */
 .leo .foto { top: -350px; height: 1920px; }
@@ -23,16 +27,25 @@
 .leo .scrim-top { height: 380px; background: linear-gradient(to bottom, rgba(12,14,8,.9) 0%, rgba(12,14,8,.6) 45%, transparent 100%); }
 .leo .marca.tl { left: auto; right: var(--m); }
 .leo .camada { padding-bottom: calc(var(--safe-bottom) + 60px); }
-.leo .sig { bottom: calc(var(--safe-bottom) + 50px); }
+.leo .sig { bottom: calc(var(--safe-bottom) + 50px); right: 170px; }
+.leo .crisis { margin-top: 30px; }
 .leo h2.serif { font-size: 62px; }
 
 /* myth and turn have the whole height to themselves: larger type */
 .myth .mito { font-size: 78px; } .myth .truth { font-size: 32px; }
-.myth .body p { font-size: 37px; } .myth .note { font-size: 56px; }
+.myth .body p { font-size: 37px; } .myth .note { font-size: 52px; }
 .turn .line { font-size: 70px; } .turn .line + .line { margin-top: 36px; }
+.turn .stack { max-width: 800px; }
+.item .note { max-width: 850px; }
+/* faint giant 1 sat in the bottom 300px: bring it up under the text */
+.myth .um, .turn .um { bottom: -80px !important; }
 
 /* per-photo frames: the taller crop would show the second panel of the diptych (a party with shots)
    and the beer bottle in his hand, both hidden in 4:5 */
 .bg:has(img[src$="mulher_tequila.jpg"]) { height: 930px; }
 .bg:has(img[src$="homem_na_sarjeta.jpg"]) { height: 900px; }
 .bg img[src$="homem_na_sarjeta.jpg"] { object-position: 50% 5% !important; }
+/* 9:16 shows more of these photos: her arms without hands (slide 3), and the wordmark on faces (slide 4) */
+.bg:has(img[src$="adolecente_asking_for_help.jpg"]) { height: 960px; }
+.bg img[src$="adolecente_asking_for_help.jpg"] { object-position: 50% 26.5% !important; }
+.bg img[src$="familia_da_adicta.jpg"] { object-position: 50% 18% !important; }

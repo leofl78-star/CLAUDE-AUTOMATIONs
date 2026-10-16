@@ -26,7 +26,7 @@ O resto segue o sistema: paleta oliva sem âmbar, DM Serif itálico com um acent
 
 ## Versão 9:16 (Stories e TikTok)
 
-- Nos Stories não tem comentário, botão de salvar nem arrastar. Por isso a 9:16 troca três frases: "arrasta →" vira "continua →", "Deixa salvo pra um dia ruim." vira "Tira print pra um dia ruim." e o botão vira "Manda CONSULTA no direct". As trocas ficam em `fonte/slides-9x16.js`.
+- Nos Stories não tem comentário, botão de salvar nem arrastar. Por isso a 9:16 troca três frases: "arrasta →" vira "continua →", "Deixa salvo pra um dia ruim." vira "Volta no 05 e tira print pra um dia ruim." e o botão vira "Manda CONSULTA no direct". As trocas ficam em `fonte/slides-9x16.js`.
 - Nos Stories, dá pra pôr o sticker de link da consulta no slide 10, na área escura à direita do rosto. O link leva direto pro pagamento.
 - O texto fica fora dos 250px de cima e dos 300px de baixo, onde o Instagram mostra o nome do perfil e a caixa de resposta.
 
