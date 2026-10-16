@@ -1,0 +1,158 @@
+/* Dia 1… tokens (design system "Dia 1…", tokens.json), on a 1080x1350 Instagram slide. */
+@font-face { font-family: 'Bebas Neue'; font-weight: 400; src: url(fonts/bebasneue-400-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Bebas Neue'; font-weight: 400; src: url(fonts/bebasneue-400-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'Caveat'; font-weight: 400 700; src: url(fonts/caveat-400-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Caveat'; font-weight: 400 700; src: url(fonts/caveat-400-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'DM Sans'; font-weight: 300 700; src: url(fonts/dmsans-400-normal-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Sans'; font-weight: 300 700; src: url(fonts/dmsans-400-normal-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+@font-face { font-family: 'DM Serif Display'; font-style: italic; font-weight: 400; src: url(fonts/dmserifdisplay-400-italic-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'DM Serif Display'; font-style: italic; font-weight: 400; src: url(fonts/dmserifdisplay-400-italic-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+1E00-1E9F, U+20A0-20AB, U+20AD-20C0, U+2C60-2C7F, U+A720-A7FF; }
+
+:root {
+  --olive: #6B7A36; --olive-light: #8FA04A; --olive-dark: #4E5A26;
+  --olive-grad-start: #7C8C3E; --olive-grad-mid: #5C6B2F; --olive-grad-end: #46521F; --cta-depth: #2E3614;
+  --khaki: #B8A97A; --sand: #D6CCA8; --brown: #6B4A2B;
+  --black: #0C0E08; --surface: #10130A; --surface2: #181C10;
+  --text: #E6E2CC; --light: #C0BC96; --muted: #7A7A5E; --on-cta: #F2EFDD;
+  --line: rgba(143,160,74,0.10); --line-strong: rgba(143,160,74,0.25);
+  --glow: rgba(143,160,74,0.15); --glow-top: rgba(143,160,74,0.13); --shade: rgba(0,0,0,0.55);
+  --one-stroke: rgba(143,160,74,0.17); --one-stroke-strong: rgba(143,160,74,0.26); --one-stroke-faint: rgba(143,160,74,0.085);
+  --photo-warm: rgba(107,74,43,0.12); --fade-ground: rgba(12,14,8,0.62);
+  --font-serif: 'DM Serif Display', Georgia, serif; --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-label: 'Bebas Neue', 'DM Sans', sans-serif; --font-hand: 'Caveat', cursive;
+  --shadow-btn-social: inset 0 1px 0 rgba(255,255,255,0.16), 0 4px 0 #2E3614, 0 8px 26px rgba(0,0,0,0.5);
+  --m: 84px;          /* canvas-margin */
+  --pad-y: 96px;      /* canvas-pad-y */
+  --corner: 80px;     /* corner-inset */
+  --photo-h: 760px;   /* how far the background photo reaches before fading to black */
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { background: var(--black); color: var(--text); font-family: var(--font-sans); }
+body { padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 40px; }
+
+.slide { width: 1080px; height: 1350px; position: relative; overflow: hidden; background: var(--black); flex-shrink: 0; -webkit-font-smoothing: antialiased; }
+
+/* 1. background photo, olive/brown grade (user's choice: emotional scenes) */
+.bg { position: absolute; left: 0; right: 0; top: 0; height: var(--photo-h); z-index: 1; overflow: hidden; }
+.bg img { width: 100%; height: 100%; object-fit: cover; display: block; filter: grayscale(1) sepia(0.55) hue-rotate(22deg) saturate(1.05) brightness(0.58) contrast(1.08); }
+.bg::before { content: ''; position: absolute; inset: 0; z-index: 1; background: var(--photo-warm); mix-blend-mode: multiply; }
+.bg::after { content: ''; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to bottom, rgba(12,14,8,0.55) 0%, rgba(12,14,8,0) 22%, rgba(12,14,8,0) 40%, var(--fade-ground) 72%, var(--black) 98%); }
+
+/* 2. giant outlined 1 (GiantOne) */
+.um { position: absolute; z-index: 2; font-family: var(--font-serif); font-style: italic; line-height: .74; color: transparent; -webkit-text-stroke: 2px var(--one-stroke); user-select: none; pointer-events: none; }
+.um.forte { -webkit-text-stroke: 2.4px var(--one-stroke-strong); }
+.um.fraco { -webkit-text-stroke: 2px var(--one-stroke-faint); }
+
+/* 3. glow + shade */
+.vinheta { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(ellipse at 50% 108%, var(--glow) 0%, transparent 62%); }
+.vinheta-top { position: absolute; inset: 0; z-index: 3; pointer-events: none; background: radial-gradient(ellipse at 50% -8%, var(--glow-top) 0%, transparent 58%); }
+
+/* 4. content column: single left-aligned column, anchored under the photo */
+.camada { position: absolute; inset: 0; z-index: 10; display: flex; flex-direction: column; justify-content: flex-end; padding: var(--pad-y) var(--m); }
+
+/* 5. corner wordmark */
+.marca { position: absolute; z-index: 20; display: flex; align-items: center; gap: 14px; }
+.marca.tr { top: var(--corner); right: var(--corner); }
+.marca.tl { top: var(--corner); left: var(--corner); }
+.marca.bl { bottom: var(--corner); left: var(--m); }
+.sol { display: block; overflow: visible; }
+.sol g { fill: none; stroke: var(--olive-light); stroke-width: 3.4; stroke-linecap: round; }
+.marca .word { font-family: var(--font-serif); font-style: italic; font-size: 30px; color: var(--text); white-space: nowrap; }
+.marca .word i { color: var(--olive-light); font-style: italic; }
+
+/* 6. grain on top (opacity-grain .62) */
+.grain { position: absolute; inset: 0; z-index: 40; pointer-events: none; opacity: 0.62; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E"); }
+
+/* text roles */
+.eyebrow { font-family: var(--font-label); font-size: 23px; letter-spacing: 8px; color: var(--olive-light); text-transform: uppercase; margin-bottom: 28px; text-shadow: 0 0 16px rgba(12,14,8,0.9); }
+.serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; color: var(--text); text-wrap: balance; }
+.serif em { color: var(--olive-light); font-style: italic; }
+h1.serif { font-size: 104px; line-height: 1.07; }
+h2.serif { font-size: 74px; line-height: 1.1; }
+.regra { height: 1px; background: var(--line-strong); width: 100%; max-width: 560px; margin: 44px 0 40px; border: 0; }
+.body p { font-size: 34px; line-height: 1.45; font-weight: 500; color: var(--light); max-width: 900px; text-wrap: pretty; }
+.body p + p { margin-top: 18px; }
+.note { font-family: var(--font-serif); font-style: italic; font-size: 50px; line-height: 1.18; color: var(--sand); margin-top: 40px; text-wrap: balance; }
+.stack > * + .body, .stack > * + ul, .stack > * + .rows { margin-top: 34px; }
+
+/* lists */
+ul.dot { list-style: none; display: flex; flex-direction: column; gap: 18px; }
+ul.dot li { position: relative; padding-left: 42px; font-size: 34px; line-height: 1.35; font-weight: 500; color: var(--text); }
+ul.dot li::before { content: ''; position: absolute; left: 0; top: 23px; width: 22px; height: 2px; background: var(--olive-light); }
+ul.quote { list-style: none; display: flex; flex-direction: column; gap: 16px; }
+ul.quote li { font-family: var(--font-serif); font-style: italic; font-size: 46px; line-height: 1.2; color: var(--light); }
+ul.quote li::before { content: '\201C'; color: var(--olive-light); }
+ul.quote li::after { content: '\201D'; color: var(--olive-light); }
+/* .linha rows (ItemList) */
+.rows .linha { border-top: 1px solid var(--line-strong); padding: 24px 0 24px 42px; position: relative; }
+.rows .linha:last-child { border-bottom: 1px solid var(--line-strong); }
+.rows .linha::before { content: ''; position: absolute; left: 0; top: 37px; width: 22px; height: 2px; background: var(--olive-light); }
+.rows .k { font-family: var(--font-label); font-size: 27px; letter-spacing: 4px; color: var(--khaki); margin-bottom: 6px; text-transform: uppercase; }
+.rows .v { font-size: 32px; line-height: 1.32; font-weight: 500; color: var(--text); }
+
+/* cover (FeedPost Hook): strong giant 1, wordmark bottom-left */
+.cover .camada { justify-content: center; padding-bottom: 200px; }
+.cover .sub { font-size: 36px; line-height: 1.4; font-weight: 500; color: var(--light); margin-top: 36px; max-width: 860px; text-wrap: balance; }
+.cover .swipe { position: absolute; z-index: 20; right: var(--m); bottom: var(--corner); font-size: 29px; font-weight: 500; letter-spacing: 1px; color: var(--muted); }
+
+/* myth */
+.myth .mito { font-family: var(--font-serif); font-style: italic; font-size: 66px; line-height: 1.12; color: var(--muted); text-decoration: line-through; text-decoration-color: rgba(143,160,74,0.55); text-decoration-thickness: 3px; text-wrap: balance; }
+.myth .truth { font-family: var(--font-label); font-size: 30px; letter-spacing: 5px; color: var(--olive-light); text-transform: uppercase; margin-top: 44px; }
+
+/* turn (manifesto) */
+.turn .camada { justify-content: center; align-items: center; text-align: center; }
+.turn .eyebrow { margin-bottom: 44px; }
+.turn .line { font-family: var(--font-serif); font-style: italic; font-size: 62px; line-height: 1.25; color: var(--text); text-wrap: balance; }
+.turn .line + .line { margin-top: 14px; }
+.turn .line.accent { color: var(--olive-light); }
+.sig { font-family: var(--font-hand); font-weight: 600; font-size: 62px; color: var(--khaki); transform: rotate(-2deg); display: inline-block; margin-top: 40px; }
+
+/* leo (PhotoHero + CTA) */
+.leo .foto { position: absolute; top: 0; left: 0; width: 1080px; height: 860px; overflow: hidden; z-index: 1; }
+.leo .foto img { position: absolute; width: 100%; height: 100%; object-fit: cover; object-position: 50% 30%; filter: saturate(.9) sepia(.14) brightness(.94) contrast(1.03); }
+.leo .foto::after { content: ''; position: absolute; inset: 0; background: var(--photo-warm); mix-blend-mode: multiply; }
+.leo .scrim-top { position: absolute; top: 0; left: 0; right: 0; height: 220px; z-index: 2; background: linear-gradient(to bottom, rgba(12,14,8,.6), transparent); }
+.leo .fusao { position: absolute; top: 0; left: 0; width: 1080px; height: 900px; z-index: 3; background: linear-gradient(to left, rgba(12,14,8,1) 0%, rgba(12,14,8,1) 34%, rgba(12,14,8,0) 54%), linear-gradient(to bottom, transparent 42%, var(--fade-ground) 72%, var(--black) 97%); }
+.leo .camada { padding-bottom: 84px; }
+.leo .hello { font-family: var(--font-serif); font-style: italic; font-size: 46px; color: var(--khaki); margin-bottom: 12px; }
+.leo h2.serif { font-size: 58px; line-height: 1.12; }
+.offer { display: flex; align-items: center; gap: 28px; margin-top: 34px; background: var(--surface2); border: 1px solid var(--line-strong); border-radius: 14px; padding: 24px 30px; }
+.offer .price { font-family: var(--font-label); font-size: 96px; line-height: .9; color: var(--olive-light); display: flex; align-items: flex-start; }
+.offer .price small { font-family: var(--font-sans); font-size: 30px; font-weight: 500; color: var(--light); margin: 6px 6px 0 0; }
+.offer .what { border-left: 1px solid var(--line-strong); padding-left: 28px; display: flex; flex-direction: column; gap: 6px; }
+.offer .what b { font-size: 32px; font-weight: 700; color: var(--text); }
+.offer .what span { font-size: 26px; font-weight: 500; color: var(--light); }
+.cta-row { display: flex; align-items: center; gap: 28px; margin-top: 30px; }
+.btnish { display: inline-flex; align-items: center; gap: 12px; background: linear-gradient(145deg, var(--olive-grad-start) 0%, var(--olive-grad-mid) 65%, var(--olive-grad-end) 100%); color: var(--on-cta); border-radius: 12px; font-family: var(--font-sans); font-weight: 600; font-size: 36px; padding: 24px 40px; box-shadow: var(--shadow-btn-social); white-space: nowrap; }
+.btnish b { font-family: var(--font-label); font-weight: 400; font-size: 50px; letter-spacing: 3px; line-height: .9; }
+.cta-row .hint { font-size: 27px; line-height: 1.35; font-weight: 500; color: var(--light); }
+.leo .private { margin-top: 26px; font-size: 29px; font-weight: 500; color: var(--light); }
+.leo .private b, .leo .crisis b { color: var(--text); }
+.leo .crisis { margin-top: 10px; font-size: 27px; font-weight: 500; color: var(--light); }
+.leo .sig { position: absolute; z-index: 20; right: var(--m); bottom: 70px; margin: 0; font-size: 58px; }
+
+/* Léo slide, 4:5: full-height photo anchored at the bottom and lifted so the face clears the text (tuned on carrossel 5) */
+.leo .foto { top: -95px; height: 1350px; }
+.leo .foto img { object-position: 50% 100%; }
+.leo .fusao { height: 1350px; background: linear-gradient(to left, rgba(12,14,8,1) 0%, rgba(12,14,8,1) 34%, rgba(12,14,8,0) 54%), linear-gradient(to top, var(--black) 0%, rgba(12,14,8,0.97) 40%, var(--fade-ground) 50%, rgba(12,14,8,0) 62%); }
+.leo .avatar { display: none; }
+/* Léo's face is on the left of the photo: corner wordmark goes right, over the darkened side */
+.leo .marca.tl { left: auto; right: var(--corner); }
+/* split-tone composite: show only the lit left half (same fix as carrossel 5) */
+.bg img[src$="mulher_bebada_sozinha.jpg"] { width: 200%; max-width: none; object-position: 0 50%; }
+/* cover headline: "Gatilho não é ordem." on one line at 4:5 */
+.cover h1.serif { font-size: 94px; }
+
+/* ── QA pass ── */
+/* dark top-right corner under the wordmark, over the existing photo fade */
+.bg::after { background: radial-gradient(ellipse 560px 300px at 100% 0%, rgba(12,14,8,0.85) 0%, rgba(12,14,8,0.6) 45%, rgba(12,14,8,0) 100%), linear-gradient(to bottom, rgba(12,14,8,0.55) 0%, rgba(12,14,8,0) 22%, rgba(12,14,8,0) 40%, var(--fade-ground) 72%, var(--black) 98%); }
+.eyebrow { font-size: 28px; letter-spacing: 7px; }
+.cover .eyebrow { font-size: 30px; letter-spacing: 6px; }
+.cover .swipe, .turn .swipe { color: var(--light); }
+.turn .swipe { position: absolute; z-index: 20; right: var(--m); bottom: var(--corner); font-size: 29px; font-weight: 500; letter-spacing: 1px; }
+.turn .line + .line { margin-top: 30px; }
+.myth .camada { justify-content: center; }
+.leo .crisis { font-size: 31px; }
+/* keep the amber chandelier at the left edge of Léo's photo out of the frame */
+.leo .foto::before { content: ''; position: absolute; z-index: 1; top: 0; bottom: 0; left: 0; width: 150px; background: linear-gradient(to right, var(--black) 0%, rgba(12,14,8,0.8) 50%, rgba(12,14,8,0) 100%); }
+.body p { text-wrap: balance; }
